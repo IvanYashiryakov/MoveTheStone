@@ -5,12 +5,13 @@ using UnityEngine.Events;
 
 public class Board : MonoBehaviour
 {
+    public static int Width;
+    public static int Height;
+
     [SerializeField] private GameObject _tilePrafab;
     [SerializeField] private GameObject[] _itemPrefabs;
 
     private Tile[,] _tiles;
-    public static int Width;
-    public static int Height;
     private Level _level;
 
     private int _itemsToDrop;
@@ -55,8 +56,7 @@ public class Board : MonoBehaviour
             }
         }
 
-        Debug.Log($"Init to drop: {_itemsToDrop}");
-        CheckAllItemsDropped(false);
+        CheckAllItemsDropped(true);
     }
 
     public void FindMatches()
@@ -226,7 +226,6 @@ public class Board : MonoBehaviour
     private void OnItemDropped(Item item)
     {
         _itemsToDrop--;
-        Debug.Log($"Dropped, left: {_itemsToDrop}");
         CheckAllItemsDropped(true);
     }
 
@@ -239,6 +238,8 @@ public class Board : MonoBehaviour
 
     private void OnItemMoved(Item item, Item swapItem, bool isItemMoved)
     {
+        Game.CanMove = false;
+
         if (isItemMoved == true)
         {
             if (swapItem == null)

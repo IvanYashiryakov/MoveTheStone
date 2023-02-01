@@ -31,18 +31,23 @@ public class ItemMovement : MonoBehaviour
 
     private void OnMouseDown()
     {
-        InitMoving();
+        if (Game.CanMove == true)
+            InitMoving();
     }
 
     private void OnMouseDrag()
     {
-        Move();
-        MovePotentialSwapItem();
+        if (Game.CanMove == true)
+        {
+            Move();
+            MovePotentialSwapItem();
+        }
     }
 
     private void OnMouseUp()
     {
-        EndMoving();
+        if (Game.CanMove == true)
+            EndMoving();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

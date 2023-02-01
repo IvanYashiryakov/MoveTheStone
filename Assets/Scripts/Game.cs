@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Game : MonoBehaviour
 {
+    public static bool CanMove = true;
+
     [SerializeField] private Level[] _levels;
     [SerializeField] private Board _board;
 
@@ -56,5 +58,7 @@ public class Game : MonoBehaviour
     {
         if (isNextBoardActionNeeded)
             _board.DropItems();
+        else
+            CanMove = true;
     }
 }
