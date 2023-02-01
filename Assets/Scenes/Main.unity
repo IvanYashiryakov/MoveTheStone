@@ -193,7 +193,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Match
+  m_Text: Next
 --- !u!222 &344438957
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -236,6 +236,9 @@ MonoBehaviour:
   - {fileID: 2394172120092411343, guid: e1283ec8b3b17d0428e224516b81c104, type: 3}
   - {fileID: 9135008615449000817, guid: 3cbf504737f775b4b91337c0da872314, type: 3}
   - {fileID: 1252171215140064454, guid: d6bdd046c8b58c845a07770ab209fe50, type: 3}
+  - {fileID: 4354079139318650855, guid: ca31702ee8fffc142b78412663f31312, type: 3}
+  - {fileID: 5714177856681598895, guid: d168eecb014975e4989c28b2a6c99f00, type: 3}
+  - {fileID: 4166459225138020336, guid: f3fab8764fa175441adae1366f953464, type: 3}
 --- !u!4 &656916015
 Transform:
   m_ObjectHideFlags: 0
@@ -342,8 +345,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 2091158316}
-  - {fileID: 1574072487}
   - {fileID: 1802539773}
+  - {fileID: 1574072487}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -444,7 +447,7 @@ GameObject:
   - component: {fileID: 1574072489}
   - component: {fileID: 1574072488}
   m_Layer: 5
-  m_Name: DropButton
+  m_Name: PreviousButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -463,12 +466,12 @@ RectTransform:
   m_Children:
   - {fileID: 2061339931}
   m_Father: {fileID: 748798553}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 14, y: 765.59}
-  m_SizeDelta: {x: 210.35, y: 177.86}
+  m_AnchoredPosition: {x: -346, y: 745}
+  m_SizeDelta: {x: 243.89, y: 152.21}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1574072488
 MonoBehaviour:
@@ -516,7 +519,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1959385642}
         m_TargetAssemblyTypeName: Game, Assembly-CSharp
-        m_MethodName: ButtonDropClick
+        m_MethodName: ButtonPreviousClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -577,7 +580,7 @@ GameObject:
   - component: {fileID: 1802539775}
   - component: {fileID: 1802539774}
   m_Layer: 5
-  m_Name: MatchButton
+  m_Name: NextLevelButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -596,12 +599,12 @@ RectTransform:
   m_Children:
   - {fileID: 344438955}
   m_Father: {fileID: 748798553}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -306, y: 773.49}
-  m_SizeDelta: {x: 257.75, y: 162.06}
+  m_AnchoredPosition: {x: -32, y: 745}
+  m_SizeDelta: {x: 257.75, y: 152.21}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1802539774
 MonoBehaviour:
@@ -649,7 +652,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1959385642}
         m_TargetAssemblyTypeName: Game, Assembly-CSharp
-        m_MethodName: ButtonMatch
+        m_MethodName: ButtonNextClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -824,7 +827,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _levels:
-  - {fileID: 11400000, guid: 068d629dd8cd7914eac061c3c19360ad, type: 2}
+  - {fileID: 11400000, guid: dd77321f0d217bf4ba11841c130d6eb9, type: 2}
+  - {fileID: 11400000, guid: e6db4d3bac746d04696e35bdde598c17, type: 2}
+  - {fileID: 11400000, guid: 4929b3e89877f0b45b5c791729bd3141, type: 2}
+  - {fileID: 11400000, guid: 51a80010f0b6a684490eda6a2b091179, type: 2}
+  - {fileID: 11400000, guid: c592325e86b7dbc46a8837d54a436b66, type: 2}
   _board: {fileID: 656916014}
 --- !u!4 &1959385643
 Transform:
@@ -910,7 +917,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Drop Items
+  m_Text: Previous
 --- !u!222 &2061339933
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -15,33 +15,12 @@ MonoBehaviour:
   _boardWidth: 7
   _boardHeight: 9
   _items:
-  - Id: 0
-    X: 1
-    Y: 0
-  - Id: 0
-    X: 2
-    Y: 0
-  - Id: 0
-    X: 3
-    Y: 2
-  - Id: 0
-    X: 4
-    Y: 2
   - Id: 1
     X: 2
+    Y: 0
+  - Id: 1
+    X: 3
+    Y: 0
+  - Id: 1
+    X: 3
     Y: 1
-  - Id: 1
-    X: 4
-    Y: 3
-  - Id: 1
-    X: 3
-    Y: 0
-  - Id: 1
-    X: 4
-    Y: 0
-  - Id: 1
-    X: 5
-    Y: 0
-  - Id: 1
-    X: 3
-    Y: 3

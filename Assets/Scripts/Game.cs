@@ -33,14 +33,22 @@ public class Game : MonoBehaviour
         GenerateLevel(_currentLevel);
     }
 
-    public void ButtonDropClick()
+    public void ButtonNextClick()
     {
-        _board.DropItems();
+        _currentLevel++;
+        if (_currentLevel >= _levels.Length)
+            _currentLevel = 0;
+
+        GenerateLevel(_currentLevel);
     }
 
-    public void ButtonMatch()
+    public void ButtonPreviousClick()
     {
-        _board.FindMatches();
+        _currentLevel--;
+        if (_currentLevel < 0)
+            _currentLevel = _levels.Length - 1;
+
+        GenerateLevel(_currentLevel);
     }
 
     private void GenerateLevel(int levelNumber)
