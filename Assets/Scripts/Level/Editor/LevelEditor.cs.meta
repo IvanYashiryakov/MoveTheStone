@@ -3,7 +3,13 @@ guid: 86f33774710518848ac74963b8594d2e
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - _package: {fileID: 2800000, guid: 91b97ef844b44314d984b77361325eda, type: 3}
+  - _redWood: {fileID: 2800000, guid: fef7e72d444d745448fcd1e4857ef558, type: 3}
+  - _wood: {fileID: 2800000, guid: 4a54fe70f5c5ffb44a4621bd5c9fb4b4, type: 3}
+  - _green: {fileID: 2800000, guid: 6cc04aa3bcae2be40bbb2e0b2ebd4818, type: 3}
+  - _baggage: {fileID: 2800000, guid: 1ba43c27cc46a5e48864290eb6159e0c, type: 3}
+  - _steel: {fileID: 2800000, guid: 495f12629124d634ab2ccee8e1c49d02, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

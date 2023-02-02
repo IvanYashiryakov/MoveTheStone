@@ -6,12 +6,15 @@ using UnityEditor;
 [CustomEditor(typeof(Level))]
 public class LevelEditor : Editor
 {
-    private Level _level;
+    [SerializeField] private Texture _package;
+    [SerializeField] private Texture _redWood;
+    [SerializeField] private Texture _wood;
+    [SerializeField] private Texture _green;
+    [SerializeField] private Texture _baggage;
+    [SerializeField] private Texture _steel;
 
-    private SerializedProperty _boardWidth;
-    private SerializedProperty _boardHeight;
-    private SerializedProperty _tryCount;
-    //private SerializedProperty _items;
+    private Texture[] _textures;
+    private Level _level;
 
     private void OnEnable()
     {
@@ -19,22 +22,22 @@ public class LevelEditor : Editor
         if (_level.Items == null)
             _level.Items = new ItemInfo[0];
 
-        _boardWidth = serializedObject.FindProperty("_boardWidth");
-        _boardHeight = serializedObject.FindProperty("_boardHeight");
-        _tryCount = serializedObject.FindProperty("_tryCount");
-        //_items = serializedObject.FindProperty("_items");
+        _textures = new Texture[] { _package, _redWood, _wood, _green, _baggage, _steel };
     }
 
     public override void OnInspectorGUI()
     {
         GUILayout.BeginHorizontal();
-        EditorGUILayout.PropertyField(_boardWidth);
-        EditorGUILayout.PropertyField(_boardHeight);
+        EditorGUILayout.LabelField("Width:", GUILayout.Width(40));
+        _level.BoardWidth = EditorGUILayout.IntField(_level.BoardWidth, GUILayout.Width(30));
+        EditorGUILayout.LabelField("Height:", GUILayout.Width(45));
+        _level.BoardHeight = EditorGUILayout.IntField(_level.BoardHeight, GUILayout.Width(30));
+        EditorGUILayout.LabelField("Try count:", GUILayout.Width(60));
+        _level.TryCount = EditorGUILayout.IntField(_level.TryCount, GUILayout.Width(30));
         GUILayout.EndHorizontal();
-        EditorGUILayout.PropertyField(_tryCount);
-        EditorGUILayout.Space(15);
+        EditorGUILayout.Space(5);
         GUILayout.BeginHorizontal();
-        EditorGUILayout.LabelField("Boxes", GUILayout.Width(100));
+        EditorGUILayout.LabelField("", GUILayout.Width(100));
 
         if (GUILayout.Button("Add box", GUILayout.Width(70), GUILayout.Height(20)))
         {
@@ -68,12 +71,65 @@ public class LevelEditor : Editor
         }
         GUILayout.EndVertical();
 
+        GUILayout.BeginVertical(GUI.skin.box);
+
+        for (int h = _level.BoardHeight - 1; h >= 0; h--)
+        {
+            GUILayout.BeginHorizontal();
+
+            for (int w = 0; w < _level.BoardWidth; w++)
+            {
+                int itemIndex = FindItemIndex(_level.Items, w, h);
+
+                if (itemIndex != -1)
+                {
+                    if (GUILayout.Button(_textures[(int)_level.Items[itemIndex].Id], GUILayout.Width(30), GUILayout.Height(30)))
+                    {
+
+                    }
+                }
+                else
+                {
+                    if (GUILayout.Button($"", GUILayout.Width(30), GUILayout.Height(30)))
+                    {
+
+                    }
+                }
+
+            }
+            EditorGUILayout.LabelField($"{h}", GUILayout.Width(30));
+            GUILayout.EndHorizontal();
+        }
+
+        GUILayout.BeginHorizontal();
+
+        for (int w = 0; w < _level.BoardWidth; w++)
+        {
+            EditorGUILayout.LabelField($"   {w}", GUILayout.Width(30));
+        }
+
+        GUILayout.EndHorizontal();
+        GUILayout.EndVertical();
+
         if (GUI.changed)
         {
             EditorUtility.SetDirty(_level);
         }
 
         serializedObject.ApplyModifiedProperties();
+    }
+
+    private int FindItemIndex(ItemInfo[] itemInfos, int x, int y)
+    {
+        for (int i = 0; i < itemInfos.Length; i++)
+        {
+            if (itemInfos[i].X == x && itemInfos[i].Y == y)
+            {
+                return i;
+            }
+        }
+
+        return -1;
     }
 
     private ItemInfo[] AddElementToArray(ItemInfo[] array)

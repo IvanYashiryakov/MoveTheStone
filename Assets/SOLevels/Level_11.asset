@@ -10,18 +10,36 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 747b4b186b0e3824f8ca241e63fbf460, type: 3}
-  m_Name: Level_02
+  m_Name: Level_11
   m_EditorClassIdentifier: 
-  _boardWidth: 7
-  _boardHeight: 9
-  _tryCount: 1
+  BoardWidth: 7
+  BoardHeight: 9
+  TryCount: 2
   Items:
-  - Id: 1
+  - Id: 0
     X: 2
     Y: 0
-  - Id: 1
-    X: 3
-    Y: 0
-  - Id: 1
+  - Id: 0
+    X: 2
+    Y: 1
+  - Id: 0
+    X: 4
+    Y: 2
+  - Id: 4
+    X: 2
+    Y: 2
+  - Id: 4
     X: 3
     Y: 1
+  - Id: 4
+    X: 3
+    Y: 0
+  - Id: 5
+    X: 3
+    Y: 2
+  - Id: 5
+    X: 4
+    Y: 1
+  - Id: 5
+    X: 4
+    Y: 0
