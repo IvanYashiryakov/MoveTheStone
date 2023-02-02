@@ -13,6 +13,7 @@ public class Board : MonoBehaviour
 
     private Tile[,] _tiles;
     private Level _level;
+    private Stack<ItemInfo[]> _previousMoves = new Stack<ItemInfo[]>();
 
     private int _itemsToDrop;
     private int _itemsToDestroy;
@@ -21,6 +22,7 @@ public class Board : MonoBehaviour
 
     [HideInInspector] public UnityAction<bool> AllItemsDropped;
     [HideInInspector] public UnityAction<bool> AllMatchedItemsDestroyed;
+    [HideInInspector] public UnityAction<int> PreviousMovesCountChanged;
 
     public void GenerateLevel(Level level)
     {
@@ -35,6 +37,8 @@ public class Board : MonoBehaviour
     {
         DestroyItems();
         CreateItems(_level.Items);
+        _previousMoves.Clear();
+        SaveMove();
     }
 
     public void DropItems()
@@ -92,6 +96,38 @@ public class Board : MonoBehaviour
 
         _itemsToDestroy = tilesToDeleteItem.Count;
         CheckAllMatchedItemsDestroyed(false);
+    }
+
+    public void SaveMove()
+    {
+        List<ItemInfo> itemsList = new List<ItemInfo>();
+
+        for (int w = 0; w < Width; w++)
+        {
+            for (int h = 0; h < Height; h++)
+            {
+                if (_tiles[w, h].Item != null)
+                {
+                    Item item = _tiles[w, h].Item;
+                    itemsList.Add(new ItemInfo(item.Id, item.X, item.Y));
+                }
+            }
+        }
+
+        _previousMoves.Push(itemsList.ToArray());
+        PreviousMovesCountChanged?.Invoke(_previousMoves.Count);
+    }
+
+    public void LoadPreviousMove()
+    {
+        if (_previousMoves.Count > 1)
+        {
+            _previousMoves.Pop();
+            DestroyItems();
+            CreateItems(_previousMoves.Pop());
+            SaveMove();
+            PreviousMovesCountChanged?.Invoke(_previousMoves.Count);
+        }
     }
 
     private bool TryFindMatch(Tile tile, out List<Tile> matchedTiles)

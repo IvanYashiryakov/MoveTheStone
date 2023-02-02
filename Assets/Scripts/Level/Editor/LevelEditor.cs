@@ -84,16 +84,12 @@ public class LevelEditor : Editor
                 if (itemIndex != -1)
                 {
                     if (GUILayout.Button(_textures[(int)_level.Items[itemIndex].Id], GUILayout.Width(30), GUILayout.Height(30)))
-                    {
-
-                    }
+                    { }
                 }
                 else
                 {
                     if (GUILayout.Button($"", GUILayout.Width(30), GUILayout.Height(30)))
-                    {
-
-                    }
+                    { }
                 }
 
             }

@@ -10,8 +10,4 @@ public class Level : ScriptableObject
     public int TryCount = 1;
     
     public ItemInfo[] Items;
-
-    //public int BoardWidth => _boardWidth;
-    //public int BoardHeight => _boardHeight;
-    //public int TryCount => _tryCount;
 }

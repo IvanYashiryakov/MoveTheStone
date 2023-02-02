@@ -51,6 +51,11 @@ public class Game : MonoBehaviour
         GenerateLevel(_currentLevel);
     }
 
+    public void ButtonLoadPreviousMove()
+    {
+        _board.LoadPreviousMove();
+    }
+
     private void GenerateLevel(int levelNumber)
     {
         _board.GenerateLevel(_levels[levelNumber]);
@@ -67,6 +72,9 @@ public class Game : MonoBehaviour
         if (isNextBoardActionNeeded)
             _board.DropItems();
         else
+        {
             CanMove = true;
+            _board.SaveMove();
+        }
     }
 }
