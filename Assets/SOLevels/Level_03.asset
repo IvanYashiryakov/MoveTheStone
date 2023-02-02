@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _boardWidth: 7
   _boardHeight: 9
-  _items:
+  Items:
   - Id: 1
     X: 2
     Y: 0

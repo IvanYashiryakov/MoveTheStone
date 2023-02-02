@@ -182,7 +182,7 @@ public class Board : MonoBehaviour
     {
         foreach (var item in items)
         {
-            var box = Instantiate(_itemPrefabs[item.Id], new Vector3(item.X, item.Y), Quaternion.identity, _tiles[item.X, item.Y].transform);
+            var box = Instantiate(_itemPrefabs[(int)item.Id], new Vector3(item.X, item.Y), Quaternion.identity, _tiles[item.X, item.Y].transform);
             box.name = "(" + item.X + "," + item.Y + ")";
             _tiles[item.X, item.Y].SetItem(box.GetComponent<Item>());
             _tiles[item.X, item.Y].Item.SetPositionProperties(item.X, item.Y);

@@ -7,9 +7,11 @@ public class Level : ScriptableObject
 {
     [SerializeField] private int _boardWidth = 7;
     [SerializeField] private int _boardHeight = 9;
-    [SerializeField] private ItemInfo[] _items;
+    [SerializeField] private int _tryCount = 1;
+    
+    public ItemInfo[] Items;
 
-    public ItemInfo[] Items => _items;
     public int BoardWidth => _boardWidth;
     public int BoardHeight => _boardHeight;
+    public int TryCount => _tryCount;
 }

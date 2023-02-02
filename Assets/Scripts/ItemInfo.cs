@@ -5,11 +5,11 @@ using UnityEngine;
 [System.Serializable]
 public struct ItemInfo
 {
-    public int Id;
+    public BoxType Id;
     public int X;
     public int Y;
 
-    public ItemInfo(int id, int x, int y)
+    public ItemInfo(BoxType id, int x, int y)
     {
         Id = id;
         X = x;

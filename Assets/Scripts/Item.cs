@@ -6,7 +6,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Animator))]
 public class Item : MonoBehaviour
 {
-    [SerializeField] private int _id;
+    [SerializeField] private BoxType _id;
     [SerializeField] private int _x;
     [SerializeField] private int _y;
 
@@ -18,7 +18,7 @@ public class Item : MonoBehaviour
     [HideInInspector] public UnityAction<Item> Destroyed;
     [HideInInspector] public UnityAction<Item, Item, bool> Moved;
 
-    public int Id => _id;
+    public BoxType Id => _id;
     public int X => _x;
     public int Y => _y;
 

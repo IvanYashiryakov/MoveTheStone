@@ -832,6 +832,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4929b3e89877f0b45b5c791729bd3141, type: 2}
   - {fileID: 11400000, guid: 51a80010f0b6a684490eda6a2b091179, type: 2}
   - {fileID: 11400000, guid: c592325e86b7dbc46a8837d54a436b66, type: 2}
+  - {fileID: 11400000, guid: 31e3fc1f4685c3047b8bc9751a3ddd09, type: 2}
+  - {fileID: 11400000, guid: 30eec41f48825ab40925e0029d305442, type: 2}
+  - {fileID: 11400000, guid: 5463e17bfbf7cc2478bd108b3ca042a6, type: 2}
+  - {fileID: 11400000, guid: f6a5e107e45c52743a8a247b774571c7, type: 2}
+  - {fileID: 11400000, guid: f5137fb924271dc408f7a0f379b1ee97, type: 2}
   _board: {fileID: 656916014}
 --- !u!4 &1959385643
 Transform:
