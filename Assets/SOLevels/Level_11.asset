@@ -43,3 +43,10 @@ MonoBehaviour:
   - Id: 5
     X: 4
     Y: 0
+  Hints:
+  - X: 4
+    Y: 2
+    Direction: 3
+  - X: 3
+    Y: 2
+    Direction: 3

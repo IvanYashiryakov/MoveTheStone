@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 747b4b186b0e3824f8ca241e63fbf460, type: 3}
   m_Name: Level_08
   m_EditorClassIdentifier: 
-  _boardWidth: 7
-  _boardHeight: 9
-  _tryCount: 1
+  BoardWidth: 7
+  BoardHeight: 9
+  TryCount: 1
   Items:
   - Id: 5
     X: 1
@@ -70,3 +70,7 @@ MonoBehaviour:
   - Id: 0
     X: 5
     Y: 1
+  Hints:
+  - X: 3
+    Y: 1
+    Direction: 2

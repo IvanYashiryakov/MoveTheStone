@@ -10,6 +10,7 @@ public class Board : MonoBehaviour
 
     [SerializeField] private GameObject _tilePrafab;
     [SerializeField] private GameObject[] _itemPrefabs;
+    [SerializeField] private GameObject _hintPrefab;
 
     private Tile[,] _tiles;
     private Level _level;
@@ -18,7 +19,11 @@ public class Board : MonoBehaviour
     private int _itemsToDrop;
     private int _itemsToDestroy;
 
+    private Hint _hint;
+    private bool _isHintShowing;
+
     public Tile[,] Tiles => _tiles;
+    public Level Level => _level;
 
     [HideInInspector] public UnityAction<bool> AllItemsDropped;
     [HideInInspector] public UnityAction<bool> AllMatchedItemsDestroyed;
@@ -39,6 +44,7 @@ public class Board : MonoBehaviour
         CreateItems(_level.Items);
         _previousMoves.Clear();
         SaveMove();
+        StopHint();
     }
 
     public void DropItems()
@@ -127,7 +133,43 @@ public class Board : MonoBehaviour
             CreateItems(_previousMoves.Pop());
             SaveMove();
             PreviousMovesCountChanged?.Invoke(_previousMoves.Count);
+
+            if (_isHintShowing == true)
+                StartNextHint();
         }
+    }
+
+    public void TryStartNextHint()
+    {
+        if (_isHintShowing == true)
+            StartNextHint();
+    }
+
+    public void StartNextHint()
+    {
+        _isHintShowing = true;
+        int currentHint = _previousMoves.Count - 1;
+
+        if (currentHint >= _level.Hints.Length)
+        {
+            //StopHint();
+            return;
+        }
+
+        if (_hint == null)
+            _hint = Instantiate(_hintPrefab).GetComponent<Hint>();
+
+        Vector2 startPosition = new Vector2(_level.Hints[currentHint].X, _level.Hints[currentHint].Y);
+        _hint.Init(startPosition, _level.Hints[currentHint].Direction);
+        _hint.StartMoving();
+    }
+
+    public void StopHint()
+    {
+        _isHintShowing = false;
+
+        if (_hint != null)
+            _hint.StopMoving();
     }
 
     private bool TryFindMatch(Tile tile, out List<Tile> matchedTiles)
@@ -275,6 +317,9 @@ public class Board : MonoBehaviour
     private void OnItemMoved(Item item, Item swapItem, bool isItemMoved)
     {
         Game.CanMove = false;
+
+        if (_isHintShowing == true)
+            _hint.StopMoving();
 
         if (isItemMoved == true)
         {

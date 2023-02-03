@@ -56,6 +56,12 @@ public class Game : MonoBehaviour
         _board.LoadPreviousMove();
     }
 
+    public void ButtonHint()
+    {
+        _board.RestartLevel();
+        _board.StartNextHint();
+    }
+
     private void GenerateLevel(int levelNumber)
     {
         _board.GenerateLevel(_levels[levelNumber]);
@@ -75,6 +81,7 @@ public class Game : MonoBehaviour
         {
             CanMove = true;
             _board.SaveMove();
+            _board.TryStartNextHint();
         }
     }
 }

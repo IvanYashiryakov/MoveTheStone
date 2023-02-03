@@ -44,3 +44,6 @@ TagManager:
   - name: Tiles
     uniqueID: 3097329043
     locked: 0
+  - name: Hint
+    uniqueID: 1195302073
+    locked: 0

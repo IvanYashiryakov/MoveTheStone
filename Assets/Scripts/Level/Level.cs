@@ -7,7 +7,7 @@ public class Level : ScriptableObject
 {
     public int BoardWidth = 7;
     public int BoardHeight = 9;
-    public int TryCount = 1;
-    
+    public int MoveCount = 1;
     public ItemInfo[] Items;
+    public HintInfo[] Hints;
 }
