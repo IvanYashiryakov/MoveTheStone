@@ -8,7 +8,7 @@ public class ChooseOrientation : MonoBehaviour
     [SerializeField] private RectTransform _landscapeUI;
 
     private readonly Vector3 _cameraPortraitPostion = new Vector3(3f, 5, -10);
-    private readonly float _cameraPortraitSize = 7;
+    private readonly float _cameraPortraitSize = 6.24f;
 
     private readonly Vector3 _cameraLandscapePostion = new Vector3(3.25f, 4, -10);
     private readonly float _cameraLandscapeSize = 5;

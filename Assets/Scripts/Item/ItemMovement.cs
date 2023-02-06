@@ -16,8 +16,8 @@ public class ItemMovement : MonoBehaviour
     private float _offsetY = 0f;
     private Vector2 _newPosition;
     private int _direction = -1;    // -1 - N/A, 0 - vertical, 1 - horizontal
-    private float _distanceToDetectDirection = 0.04f;
-    private float _distanceToChangePosition = 0.65f;
+    private float _distanceToDetectDirection = 0.08f;
+    private float _distanceToChangePosition = 0.7f;
 
     private Transform _potentialSwapItem;
     private bool isSelected = false;
@@ -138,7 +138,10 @@ public class ItemMovement : MonoBehaviour
         }
         else
         {
-            _item.Moved?.Invoke(_item, _potentialSwapItem?.GetComponent<Item>(), true);
+            if (_potentialSwapItem != null)
+                _item.Moved?.Invoke(_item, _potentialSwapItem.GetComponent<Item>(), true);
+            else
+                _item.Moved?.Invoke(_item, null, true);
         }
     }
 
