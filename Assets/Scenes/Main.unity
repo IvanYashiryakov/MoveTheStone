@@ -3384,7 +3384,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224064958898197920, guid: 1be0f75aaff35b84bbf25fde5ebb4cac, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -582
+      value: 564
       objectReference: {fileID: 0}
     - target: {fileID: 224064958898197920, guid: 1be0f75aaff35b84bbf25fde5ebb4cac, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -8792,7 +8792,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1932071472}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: 5, z: -10}
+  m_LocalPosition: {x: 3.5, y: 5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8902,6 +8902,10 @@ MonoBehaviour:
   _countries:
   - {fileID: 11400000, guid: 1b714f46df2465d49b053254db71ae21, type: 2}
   - {fileID: 11400000, guid: 19d947a7954de8b499e0d2ef9561bb8d, type: 2}
+  - {fileID: 11400000, guid: 61ce8f1ef5597664483e9d5172011aa4, type: 2}
+  - {fileID: 11400000, guid: 8410c97876ed29149b68006914fbb1c1, type: 2}
+  - {fileID: 11400000, guid: a07ff1c94eda0bc41932c55b12576964, type: 2}
+  - {fileID: 11400000, guid: f4fb99857db88674494c97041f15b676, type: 2}
   _levels:
   - {fileID: 11400000, guid: dd77321f0d217bf4ba11841c130d6eb9, type: 2}
   - {fileID: 11400000, guid: e6db4d3bac746d04696e35bdde598c17, type: 2}

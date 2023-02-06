@@ -98,9 +98,9 @@ MonoBehaviour:
     X: 4
     Y: 4
   Hints:
-  - X: 0
-    Y: 0
-    Direction: 0
-  - X: 0
-    Y: 0
-    Direction: 0
+  - X: 2
+    Y: 2
+    Direction: 2
+  - X: 1
+    Y: 1
+    Direction: 1
