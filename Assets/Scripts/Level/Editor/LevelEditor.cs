@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using System;
 
 [CustomEditor(typeof(Level))]
 public class LevelEditor : Editor
@@ -32,9 +33,9 @@ public class LevelEditor : Editor
     public override void OnInspectorGUI()
     {
         DrawIntSection();
-        DrawItemInfoSection();
         DrawGridView();
         DrawHintSection();
+        DrawItemInfoSection();
 
         if (GUI.changed)
         {
@@ -71,12 +72,20 @@ public class LevelEditor : Editor
                 if (itemIndex != -1)
                 {
                     if (GUILayout.Button(_textures[(int)_level.Items[itemIndex].Id], GUILayout.Width(30), GUILayout.Height(30)))
-                    { }
+                    {
+                        BoxType itemId = (BoxType)(((int)_level.Items[itemIndex].Id + 1) % Enum.GetNames(typeof(BoxType)).Length);
+                        ItemInfo itemInfo = new ItemInfo(itemId, w, h);
+                        _level.Items[itemIndex] = itemInfo;
+                    }
                 }
                 else
                 {
                     if (GUILayout.Button($"", GUILayout.Width(30), GUILayout.Height(30)))
-                    { }
+                    {
+                        ItemInfo itemInfo = new ItemInfo(BoxType.Package, w, h);
+                        _level.Items = AddElementToArray(_level.Items);
+                        _level.Items[_level.Items.Length - 1] = itemInfo;
+                    }
                 }
 
             }

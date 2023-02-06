@@ -11,6 +11,7 @@ public class UIMoveCount : MonoBehaviour
     private void OnEnable()
     {
         _board.PreviousMovesCountChanged += OnPreviousMovesCountChanged;
+        _text.text = (_board.CurrentMove - 1).ToString();
     }
 
     private void OnDisable()

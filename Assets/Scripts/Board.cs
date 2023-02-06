@@ -24,6 +24,7 @@ public class Board : MonoBehaviour
 
     public Tile[,] Tiles => _tiles;
     public Level Level => _level;
+    public int CurrentMove => _previousMoves.Count;
 
     [HideInInspector] public UnityAction<bool> AllItemsDropped;
     [HideInInspector] public UnityAction<bool> AllMatchedItemsDestroyed;
@@ -172,6 +173,13 @@ public class Board : MonoBehaviour
             _hint.StopMoving();
     }
 
+    public void ExitLevel()
+    {
+        StopHint();
+        DestroyItems();
+        DestroyTiles();
+    }
+
     private bool TryFindMatch(Tile tile, out List<Tile> matchedTiles)
     {
         matchedTiles = FindHorizontalMatch(tile);
@@ -299,6 +307,16 @@ public class Board : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void DestroyTiles()
+    {
+        foreach (var tile in _tiles)
+        {
+            Destroy(tile.gameObject);
+        }
+
+        _tiles = null;
     }
 
     private void OnItemDropped(Item item)
