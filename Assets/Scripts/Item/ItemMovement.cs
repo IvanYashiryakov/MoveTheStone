@@ -134,7 +134,7 @@ public class ItemMovement : MonoBehaviour
         {
             transform.position = transform.parent.position;
             ResetPotencialSwapItem();
-            _item.Moved?.Invoke(_item, null, false);
+            //_item.Moved?.Invoke(_item, null, false);
         }
         else
         {
