@@ -13,9 +13,12 @@ public class LevelEditor : Editor
     [SerializeField] private Texture _green;
     [SerializeField] private Texture _baggage;
     [SerializeField] private Texture _steel;
+    [SerializeField] private GUISkin _skin;
+    [SerializeField] private GUISkin _defaultSkin;
 
     private Texture[] _textures;
     private Level _level;
+    private BoxType _boxTypeToCreate = BoxType.Package;
 
     private void OnEnable()
     {
@@ -82,7 +85,7 @@ public class LevelEditor : Editor
                 {
                     if (GUILayout.Button($"", GUILayout.Width(30), GUILayout.Height(30)))
                     {
-                        ItemInfo itemInfo = new ItemInfo(BoxType.Package, w, h);
+                        ItemInfo itemInfo = new ItemInfo(_boxTypeToCreate, w, h);
                         _level.Items = AddElementToArray(_level.Items);
                         _level.Items[_level.Items.Length - 1] = itemInfo;
                     }
@@ -102,6 +105,26 @@ public class LevelEditor : Editor
 
         GUILayout.EndHorizontal();
         GUILayout.EndVertical();
+
+        GUILayout.BeginHorizontal();
+
+        for (int i = 0; i < Enum.GetValues(typeof(BoxType)).Length; i++)
+        {
+            int selectedWidth = 0;
+            GUIStyle style = GUI.skin.button;
+            if ((BoxType)i == _boxTypeToCreate)
+            {
+                selectedWidth = 25;
+                style = _skin.button;
+            }
+
+            if (GUILayout.Button(_textures[i], style, GUILayout.Width(30 + selectedWidth), GUILayout.Height(30)))
+            {
+                _boxTypeToCreate = (BoxType)i;
+            }
+        }
+
+        GUILayout.EndHorizontal();
     }
 
     private void DrawHintSection()

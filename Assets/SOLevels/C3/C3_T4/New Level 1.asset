@@ -15,5 +15,62 @@ MonoBehaviour:
   BoardWidth: 7
   BoardHeight: 9
   MoveCount: 1
-  Items: []
-  Hints: []
+  Items:
+  - Id: 0
+    X: 1
+    Y: 0
+  - Id: 0
+    X: 2
+    Y: 1
+  - Id: 0
+    X: 3
+    Y: 4
+  - Id: 3
+    X: 2
+    Y: 0
+  - Id: 3
+    X: 3
+    Y: 0
+  - Id: 4
+    X: 4
+    Y: 0
+  - Id: 4
+    X: 5
+    Y: 0
+  - Id: 4
+    X: 3
+    Y: 1
+  - Id: 3
+    X: 4
+    Y: 1
+  - Id: 4
+    X: 5
+    Y: 1
+  - Id: 4
+    X: 4
+    Y: 2
+  - Id: 3
+    X: 5
+    Y: 2
+  - Id: 3
+    X: 3
+    Y: 2
+  - Id: 3
+    X: 4
+    Y: 3
+  - Id: 4
+    X: 3
+    Y: 3
+  - Id: 4
+    X: 5
+    Y: 3
+  - Id: 4
+    X: 5
+    Y: 4
+  - Id: 4
+    X: 4
+    Y: 4
+  Hints:
+  - X: 5
+    Y: 3
+    Direction: 1

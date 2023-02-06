@@ -10,6 +10,8 @@ MonoImporter:
   - _green: {fileID: 2800000, guid: 6cc04aa3bcae2be40bbb2e0b2ebd4818, type: 3}
   - _baggage: {fileID: 2800000, guid: 1ba43c27cc46a5e48864290eb6159e0c, type: 3}
   - _steel: {fileID: 2800000, guid: 495f12629124d634ab2ccee8e1c49d02, type: 3}
+  - _skin: {fileID: 11400000, guid: 6f429d69bec7e704485d28d8897935b0, type: 2}
+  - _defaultSkin: {fileID: 11400000, guid: 19985df2f2a078a468ba39ca384e734c, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
