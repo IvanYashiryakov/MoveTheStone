@@ -14,6 +14,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BoardWidth: 7
   BoardHeight: 9
-  MoveCount: 1
-  Items: []
-  Hints: []
+  MoveCount: 3
+  Items:
+  - Id: 0
+    X: 1
+    Y: 0
+  - Id: 0
+    X: 3
+    Y: 0
+  - Id: 0
+    X: 3
+    Y: 1
+  - Id: 1
+    X: 1
+    Y: 1
+  - Id: 1
+    X: 2
+    Y: 1
+  - Id: 1
+    X: 2
+    Y: 2
+  - Id: 1
+    X: 4
+    Y: 2
+  - Id: 1
+    X: 4
+    Y: 0
+  - Id: 1
+    X: 5
+    Y: 0
+  - Id: 3
+    X: 2
+    Y: 0
+  - Id: 3
+    X: 3
+    Y: 2
+  - Id: 3
+    X: 4
+    Y: 1
+  Hints:
+  - X: 2
+    Y: 1
+    Direction: 1
+  - X: 2
+    Y: 1
+    Direction: 2
+  - X: 4
+    Y: 0
+    Direction: 3
