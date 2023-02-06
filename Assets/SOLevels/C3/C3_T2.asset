@@ -13,4 +13,28 @@ MonoBehaviour:
   m_Name: C3_T2
   m_EditorClassIdentifier: 
   Name: Tokyo
-  Levels: []
+  Levels:
+  - {fileID: 11400000, guid: 6b6936ca6e113cb48b991c5212632c01, type: 2}
+  - {fileID: 11400000, guid: 57047febd73b4dd488b687847eb26684, type: 2}
+  - {fileID: 11400000, guid: 9766f9e78723758408e2a844a03a3f41, type: 2}
+  - {fileID: 11400000, guid: be730e13bb940664bbfdd26b133912f1, type: 2}
+  - {fileID: 11400000, guid: 25f975265605010489f7363e9fc013e6, type: 2}
+  - {fileID: 11400000, guid: 27aef13ce0950b54c9d2ff70abb2ce07, type: 2}
+  - {fileID: 11400000, guid: 7f86eef8903f8ec438964663d0983d8b, type: 2}
+  - {fileID: 11400000, guid: 9bd108eefac4c8e4eb72c45128e7132c, type: 2}
+  - {fileID: 11400000, guid: ffd9aa771d6dba140a43e1a317ff9b9d, type: 2}
+  - {fileID: 11400000, guid: ce921d4802b9d2d4cb2e2b88ec71ac55, type: 2}
+  - {fileID: 11400000, guid: cec14b27bb0d871449b5ef4a1df8be5b, type: 2}
+  - {fileID: 11400000, guid: d4b1ce7e036867f48890e7c2f04b1b3f, type: 2}
+  - {fileID: 11400000, guid: 8c5ace19df39b5a468a25cf88341b66c, type: 2}
+  - {fileID: 11400000, guid: 6f26e3437c88a574eb2f9ffa52d1c4c6, type: 2}
+  - {fileID: 11400000, guid: ad938932fb13de846a469b6f188ef16a, type: 2}
+  - {fileID: 11400000, guid: 9d19e7a295e448b4986262c7a7429966, type: 2}
+  - {fileID: 11400000, guid: fabb469d7cf309b49935a3c6c2a1f432, type: 2}
+  - {fileID: 11400000, guid: d3effef854e656e4e8606dc8f98d90a6, type: 2}
+  - {fileID: 11400000, guid: e951d7f96bace124eac0d74790d208f8, type: 2}
+  - {fileID: 11400000, guid: 18b7c764b5ac89e4cb53051e1dc36ff9, type: 2}
+  - {fileID: 11400000, guid: 8937abf1b5ee1c446a725e6704d04c70, type: 2}
+  - {fileID: 11400000, guid: 736211407dc7a3b4abb63e7cb36cfbca, type: 2}
+  - {fileID: 11400000, guid: 5970faa7c5eaabe43bc7cc35c4b33781, type: 2}
+  - {fileID: 11400000, guid: 2fa380e9df41b3f47afae5fb3cc30be6, type: 2}

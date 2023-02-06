@@ -13,4 +13,28 @@ MonoBehaviour:
   m_Name: C5_T2
   m_EditorClassIdentifier: 
   Name: CapeTown
-  Levels: []
+  Levels:
+  - {fileID: 11400000, guid: 2829db9eacc1fa342acc095f44445d74, type: 2}
+  - {fileID: 11400000, guid: aec1e20aa068b7442b75f2b6b91fed9b, type: 2}
+  - {fileID: 11400000, guid: 194e954b735e4f747af783286124f4bf, type: 2}
+  - {fileID: 11400000, guid: 3eb29edddef756d49b1a9565aa6ff7b3, type: 2}
+  - {fileID: 11400000, guid: fcb7a324cce0d7f46a6393a013bce8cf, type: 2}
+  - {fileID: 11400000, guid: 27d0f6d7c36f8af4e968329842363636, type: 2}
+  - {fileID: 11400000, guid: 4e5c67d914338f34383dbdb1c433643c, type: 2}
+  - {fileID: 11400000, guid: a07bd9c23a499b54ead0eceab169e2e8, type: 2}
+  - {fileID: 11400000, guid: 89213d4500d3bf242abc3b5443fb2710, type: 2}
+  - {fileID: 11400000, guid: 3a29581978ddf4846959737408c97f3f, type: 2}
+  - {fileID: 11400000, guid: baf78537e8111884eb57ceb7cf2137be, type: 2}
+  - {fileID: 11400000, guid: ead030261ee52c64a8bfa601a894033a, type: 2}
+  - {fileID: 11400000, guid: a0314831d3c5742408a7194c34192a0c, type: 2}
+  - {fileID: 11400000, guid: 844e8faf3a2f3fd4398f24d70730e335, type: 2}
+  - {fileID: 11400000, guid: 5c5f9fdcc0e317640b66d5cabcd8c851, type: 2}
+  - {fileID: 11400000, guid: 48f81b02063514741a16bc47ecf4dc2d, type: 2}
+  - {fileID: 11400000, guid: 43861876946a7b840968d86fb5675582, type: 2}
+  - {fileID: 11400000, guid: 8b4aea6338be5ca42b298fe31fb6f372, type: 2}
+  - {fileID: 11400000, guid: b2c48ae601d03304e88ed72c51826814, type: 2}
+  - {fileID: 11400000, guid: 5832072a5769b3a438833f7fa8909abb, type: 2}
+  - {fileID: 11400000, guid: 2e5e8255944977049b8d0f08908cdbb1, type: 2}
+  - {fileID: 11400000, guid: eac4ce35cacc29943b1b6dfcc1501849, type: 2}
+  - {fileID: 11400000, guid: e7eb3c3275a196c4d88118ee692e785f, type: 2}
+  - {fileID: 11400000, guid: 6306220cffebb044989c3a81cab0e78a, type: 2}

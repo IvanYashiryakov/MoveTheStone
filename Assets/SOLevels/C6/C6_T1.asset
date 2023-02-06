@@ -13,4 +13,28 @@ MonoBehaviour:
   m_Name: C6_T1
   m_EditorClassIdentifier: 
   Name: Sydney
-  Levels: []
+  Levels:
+  - {fileID: 11400000, guid: 25ce84b4e9607d04a83116f8bef14379, type: 2}
+  - {fileID: 11400000, guid: c641e82651d142144a1602262291369e, type: 2}
+  - {fileID: 11400000, guid: d8046ff9a54af074fbb9e754141efa7c, type: 2}
+  - {fileID: 11400000, guid: 4e16d5c7a20cf194faf7c007f4f65139, type: 2}
+  - {fileID: 11400000, guid: 2c6bd22397ae4124bb80ce2bea404f3e, type: 2}
+  - {fileID: 11400000, guid: 1304d51dfc3b79d44b43441cbc5c5752, type: 2}
+  - {fileID: 11400000, guid: 2a4a0497283cb6844a518e53207221cd, type: 2}
+  - {fileID: 11400000, guid: de810fcef8127f24ebca7b9415bdcbae, type: 2}
+  - {fileID: 11400000, guid: 64d59209ff377694684773fc1c941eca, type: 2}
+  - {fileID: 11400000, guid: 3c2e433727ac802429b800587abb540a, type: 2}
+  - {fileID: 11400000, guid: 5d5508b4676ecdb4399379153a143de9, type: 2}
+  - {fileID: 11400000, guid: ac211e160acc88840bac8474cd22d125, type: 2}
+  - {fileID: 11400000, guid: df299bdd0d475bb4e875961aa9372ded, type: 2}
+  - {fileID: 11400000, guid: 4c06a95b9aaa7e040ac1aea073b81c74, type: 2}
+  - {fileID: 11400000, guid: 79f6f8b4937d40f4da19539db28dd038, type: 2}
+  - {fileID: 11400000, guid: a0a5c2b47e9b39946943007922bfc1d9, type: 2}
+  - {fileID: 11400000, guid: 14be02020ea640e42ab18c337e3c5fd5, type: 2}
+  - {fileID: 11400000, guid: 52fcbeaa6f5b0474fa5be9459475257f, type: 2}
+  - {fileID: 11400000, guid: 68454dc30b04c6142b9edd181b6701f0, type: 2}
+  - {fileID: 11400000, guid: a65f440ec01c56c4683fe400bc69a28e, type: 2}
+  - {fileID: 11400000, guid: f77fa8428019bd84da26b791cd1c35d3, type: 2}
+  - {fileID: 11400000, guid: 31b9971bb39f3db4891f066e4bd2473f, type: 2}
+  - {fileID: 11400000, guid: ca3bffe108b8fd7409acac20f63a04a6, type: 2}
+  - {fileID: 11400000, guid: c1708fd1ada08d04cb58bf87f7ddc583, type: 2}

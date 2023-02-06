@@ -13,4 +13,28 @@ MonoBehaviour:
   m_Name: C6_T2
   m_EditorClassIdentifier: 
   Name: Perth
-  Levels: []
+  Levels:
+  - {fileID: 11400000, guid: 7c8f69eeaeeeee8408fb493ebdc9bae4, type: 2}
+  - {fileID: 11400000, guid: 4f6e6d143de969f4a85008f640740619, type: 2}
+  - {fileID: 11400000, guid: 060100440285c1f46b32e25b164526ea, type: 2}
+  - {fileID: 11400000, guid: 3a79add4464efb94fba1d1f0f8a67d67, type: 2}
+  - {fileID: 11400000, guid: 284d6c71bcbfc8f4abba8f93ccc866fc, type: 2}
+  - {fileID: 11400000, guid: 903158afc0cbd454d9af9a7ec99833a7, type: 2}
+  - {fileID: 11400000, guid: b36bb936fc2a92848b29456d374e025a, type: 2}
+  - {fileID: 11400000, guid: dff11a3ffd0e2cc47b9aa6e157a18184, type: 2}
+  - {fileID: 11400000, guid: 53f3ee9aad715c849bcded5a61618be4, type: 2}
+  - {fileID: 11400000, guid: 79656218b4cfd2548ba69e6fda9b8021, type: 2}
+  - {fileID: 11400000, guid: 8de998e148dc01447bfe44f2481945b7, type: 2}
+  - {fileID: 11400000, guid: 936c13d49fa091b44946668756da24b0, type: 2}
+  - {fileID: 11400000, guid: b042b7b09ed06ae429bc7083fe64aa93, type: 2}
+  - {fileID: 11400000, guid: ba23ea7fc84a72543a4f6b197bff7ede, type: 2}
+  - {fileID: 11400000, guid: 878b7ee7c5725844aa4679482a4a715d, type: 2}
+  - {fileID: 11400000, guid: dd1e384a096df8745848c057059be552, type: 2}
+  - {fileID: 11400000, guid: 16fda1660b5568440b690ccdbf128b22, type: 2}
+  - {fileID: 11400000, guid: 5cc0b3ebc2951b440b45719a195bb332, type: 2}
+  - {fileID: 11400000, guid: c8daecacc000f404f90db3fe76d51eb1, type: 2}
+  - {fileID: 11400000, guid: 3bf83dd941d18554092da4a37264008e, type: 2}
+  - {fileID: 11400000, guid: 4d263567b62c27848a28f0675f3445a3, type: 2}
+  - {fileID: 11400000, guid: c8c2779c2f1258a4bbf592cced9091f5, type: 2}
+  - {fileID: 11400000, guid: 0f19a38bfdd019840a2c65b6776ef663, type: 2}
+  - {fileID: 11400000, guid: d408794bddd828f41bf1a9cad9eebfa0, type: 2}

@@ -13,4 +13,28 @@ MonoBehaviour:
   m_Name: C4_T3
   m_EditorClassIdentifier: 
   Name: Panama
-  Levels: []
+  Levels:
+  - {fileID: 11400000, guid: 69d1d409cb3ffb34ebb844ad21e35c42, type: 2}
+  - {fileID: 11400000, guid: fa6bc73650964204d98e0a695cabbaf2, type: 2}
+  - {fileID: 11400000, guid: 64955b1e00623ec43aad2f1cadb2bcdd, type: 2}
+  - {fileID: 11400000, guid: faeb766abf71e434ea024e5ca2fa1874, type: 2}
+  - {fileID: 11400000, guid: a3ddef0b111c3fa469a6b30b5f1e3135, type: 2}
+  - {fileID: 11400000, guid: 0428e9926f2f89f46a65f4b20ae2a92d, type: 2}
+  - {fileID: 11400000, guid: da7f5b6e52820f243bc19ee689bfd66f, type: 2}
+  - {fileID: 11400000, guid: fcec52a62346e7242bb444f1c8dc6307, type: 2}
+  - {fileID: 11400000, guid: fd8ba268e9854d949b51186e3ca2b059, type: 2}
+  - {fileID: 11400000, guid: 3a7efa1a67c389642bae69dbca1fa71d, type: 2}
+  - {fileID: 11400000, guid: d784e775fc4e28c4e8baed16b90da94a, type: 2}
+  - {fileID: 11400000, guid: 309087303fd41014d900a58cf8d49329, type: 2}
+  - {fileID: 11400000, guid: f13719f697b10ba4992e2f87160d8160, type: 2}
+  - {fileID: 11400000, guid: 22d8d4d4a8e6c174fa70f243e233005b, type: 2}
+  - {fileID: 11400000, guid: 4314415e300d82c40b5b51b30f07f0b3, type: 2}
+  - {fileID: 11400000, guid: 116af28a558f9664a843c54fc0d5aa8c, type: 2}
+  - {fileID: 11400000, guid: e13612c2216697d49bc64dd8a577712a, type: 2}
+  - {fileID: 11400000, guid: 7d946afdfb53a2a48a5a233d8e9247c6, type: 2}
+  - {fileID: 11400000, guid: 3248cab4e1b36834eb0de10a4d3166c1, type: 2}
+  - {fileID: 11400000, guid: cceaf71bfd454ac4eb142f30e71ddf61, type: 2}
+  - {fileID: 11400000, guid: 39dd7d1b160dd3d40961daaf34ad24b1, type: 2}
+  - {fileID: 11400000, guid: 91b7b4768ec12a045b3ce7133b8523bb, type: 2}
+  - {fileID: 11400000, guid: b65c7909724de804287d8cd1596758da, type: 2}
+  - {fileID: 11400000, guid: 27d81e6bffe36684f9ec86648a994bdf, type: 2}

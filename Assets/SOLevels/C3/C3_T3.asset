@@ -13,4 +13,28 @@ MonoBehaviour:
   m_Name: C3_T3
   m_EditorClassIdentifier: 
   Name: Osaka
-  Levels: []
+  Levels:
+  - {fileID: 11400000, guid: fbbb6d23491ec8d419eb6a50458595c5, type: 2}
+  - {fileID: 11400000, guid: 7d11b3dd68d3a5848b2678b060e7d3cd, type: 2}
+  - {fileID: 11400000, guid: e6eea70d7458ed74bb58632433550917, type: 2}
+  - {fileID: 11400000, guid: 9855e04a922bfe24295f2795a7cebf7b, type: 2}
+  - {fileID: 11400000, guid: 62adff5e022f32e4099b7cead171ea47, type: 2}
+  - {fileID: 11400000, guid: 53810cd907066de4eb93876fa5574e66, type: 2}
+  - {fileID: 11400000, guid: bf3c6e51bca7e3240a7f2225ca7fd69e, type: 2}
+  - {fileID: 11400000, guid: 6159bc5f449f7d8499546b5f2b7e3e0c, type: 2}
+  - {fileID: 11400000, guid: 88c022df76421d143ae0ded7548978c7, type: 2}
+  - {fileID: 11400000, guid: 325c7c4d348dddc49a1cf02e554cfc47, type: 2}
+  - {fileID: 11400000, guid: 84f32200a9d363240b2d0345177b1da1, type: 2}
+  - {fileID: 11400000, guid: 862f94cdf16941146b3ee6a4ed64d600, type: 2}
+  - {fileID: 11400000, guid: 5076cf457bbb8ce49a8afc04da607813, type: 2}
+  - {fileID: 11400000, guid: aaf0c3facfe39be498b0fd67c57958fa, type: 2}
+  - {fileID: 11400000, guid: a34eea0fa17bdf9458996fe57a48d06a, type: 2}
+  - {fileID: 11400000, guid: d145b6f687d7e494cb7d2bc7abe01251, type: 2}
+  - {fileID: 11400000, guid: 12095b7a155e939449aa44054b91b58b, type: 2}
+  - {fileID: 11400000, guid: 3e372a4b51caf7346a3fe3f2bf559847, type: 2}
+  - {fileID: 11400000, guid: f285c3e315366444db1366e6915d37fa, type: 2}
+  - {fileID: 11400000, guid: da88531ff6557ec41964d231701abfac, type: 2}
+  - {fileID: 11400000, guid: 1dcf2685abeb5e644b77021f7ee6ee99, type: 2}
+  - {fileID: 11400000, guid: 39d037e5193ebd444b167ca8073e0ca9, type: 2}
+  - {fileID: 11400000, guid: d4a79ad2b6f758e498706a8efdf88eff, type: 2}
+  - {fileID: 11400000, guid: 82ad0ef51f1ee8241ac5313ccd589722, type: 2}
