@@ -16,3 +16,5 @@ MonoBehaviour:
   Towns:
   - {fileID: 11400000, guid: 8942d6436aba6db448ef8e9b0eebb2ff, type: 2}
   - {fileID: 11400000, guid: ecdf90612bb59b9459b9a8b6c0071328, type: 2}
+  - {fileID: 11400000, guid: e3e0d7eb7ef228d40a94cca48b70f56c, type: 2}
+  - {fileID: 11400000, guid: 737422d8bd451d64e819e4f069f16fe7, type: 2}

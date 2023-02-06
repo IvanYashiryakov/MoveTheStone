@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: C6
   m_EditorClassIdentifier: 
   Name: Australia
-  Towns: []
+  Towns:
+  - {fileID: 11400000, guid: 4bc8c55a7e1691040b9560f22c3d8005, type: 2}
+  - {fileID: 11400000, guid: d7c6f4a7379d499439a6ca8b094931f7, type: 2}
+  - {fileID: 11400000, guid: acc601cb3b319a745b184c35021868b4, type: 2}
+  - {fileID: 11400000, guid: 9c986f32ecbcf454d9e1e722b8f01a44, type: 2}

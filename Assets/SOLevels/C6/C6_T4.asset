@@ -13,4 +13,28 @@ MonoBehaviour:
   m_Name: C6_T4
   m_EditorClassIdentifier: 
   Name: Brisbane
-  Levels: []
+  Levels:
+  - {fileID: 11400000, guid: 083b8af7bc320f74bb6e61379bb8a5f8, type: 2}
+  - {fileID: 11400000, guid: a008717e24f51b241ba56f032fd56869, type: 2}
+  - {fileID: 11400000, guid: d2217f52448e94d4787742d99aa0e7a7, type: 2}
+  - {fileID: 11400000, guid: 243b77e2ba7917146857d9dab26f9399, type: 2}
+  - {fileID: 11400000, guid: 46c5c2996accd384dbd70ba6e3b1183a, type: 2}
+  - {fileID: 11400000, guid: e7b52e4d4245cf34ea7ac40f8313fd51, type: 2}
+  - {fileID: 11400000, guid: 39bd42bc5d72e904296b027a4d03975a, type: 2}
+  - {fileID: 11400000, guid: c82d734e4361e494aa42018e35c3cd34, type: 2}
+  - {fileID: 11400000, guid: d29a9cacdd770b94ba7405e287abf343, type: 2}
+  - {fileID: 11400000, guid: c1270e876a0937f46b27124a4748a401, type: 2}
+  - {fileID: 11400000, guid: b608cca363744a344aacc91f5a8bfcf6, type: 2}
+  - {fileID: 11400000, guid: 65da596630db6944f9149d32e858c047, type: 2}
+  - {fileID: 11400000, guid: 737456ed93939b3479b4adfcf5dea878, type: 2}
+  - {fileID: 11400000, guid: 2c040649776e5b0458b31ae415f82ef6, type: 2}
+  - {fileID: 11400000, guid: 86229756c06d48a438976c09f1113c5d, type: 2}
+  - {fileID: 11400000, guid: 97e88c9bbd870034f891eb307fe79f71, type: 2}
+  - {fileID: 11400000, guid: 1a61f3619008cc54fbb625e375866bf5, type: 2}
+  - {fileID: 11400000, guid: 8e15c32d8337ee7418ff5022810b9c5c, type: 2}
+  - {fileID: 11400000, guid: b6aedc2d717e8194db1743302af0b297, type: 2}
+  - {fileID: 11400000, guid: a78d47b4e862ce34e9272efbf0bd894c, type: 2}
+  - {fileID: 11400000, guid: 3262c6c605028224ea844b65f5033611, type: 2}
+  - {fileID: 11400000, guid: 0b50c2f8fa83a9e41adeceaf417f2644, type: 2}
+  - {fileID: 11400000, guid: 9523249dbd451ee4385a2c906b7e635a, type: 2}
+  - {fileID: 11400000, guid: 13c8776d0c7bf9748a4a16f9f8f2afd9, type: 2}

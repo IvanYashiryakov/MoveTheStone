@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: C4
   m_EditorClassIdentifier: 
   Name: South America
-  Towns: []
+  Towns:
+  - {fileID: 11400000, guid: 83e73356de09c3f4293c75c0dcbedf94, type: 2}
+  - {fileID: 11400000, guid: 4c5a948004d5be74daf3c89f206a9832, type: 2}
+  - {fileID: 11400000, guid: 0c2415cd9def5474893044ec656b6863, type: 2}
+  - {fileID: 11400000, guid: 2dca546ab231b66459a7916ccae7f337, type: 2}

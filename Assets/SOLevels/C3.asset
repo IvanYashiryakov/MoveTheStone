@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: C3
   m_EditorClassIdentifier: 
   Name: Asia
-  Towns: []
+  Towns:
+  - {fileID: 11400000, guid: 44c3495703ebc044dad07c61f2716085, type: 2}
+  - {fileID: 11400000, guid: 107bbde158e0ebc4489be300b805aa82, type: 2}
+  - {fileID: 11400000, guid: 85f154ef6848bcd4c8a0b003ff4d82ad, type: 2}
+  - {fileID: 11400000, guid: 104ba6da89a78384fa27d265abf8ffec, type: 2}
