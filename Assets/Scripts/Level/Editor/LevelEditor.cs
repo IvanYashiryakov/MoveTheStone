@@ -114,7 +114,7 @@ public class LevelEditor : Editor
             GUIStyle style = GUI.skin.button;
             if ((BoxType)i == _boxTypeToCreate)
             {
-                selectedWidth = 25;
+                selectedWidth = 15;
                 style = _skin.button;
             }
 
@@ -152,9 +152,6 @@ public class LevelEditor : Editor
             EditorGUILayout.LabelField("Y:", GUILayout.Width(14));
             int y = EditorGUILayout.IntField(_level.Hints[i].Y, GUILayout.Width(30));
 
-            //GUILayout.EndHorizontal();
-
-            //GUILayout.BeginHorizontal();
             EditorGUILayout.LabelField("Direction:", GUILayout.Width(60));
             DirectionType direction = (DirectionType)EditorGUILayout.EnumPopup(_level.Hints[i].Direction, GUILayout.Width(70));
             EditorGUILayout.Space(5);
@@ -179,11 +176,6 @@ public class LevelEditor : Editor
         EditorGUILayout.Space(5);
         GUILayout.BeginHorizontal();
         EditorGUILayout.LabelField("", GUILayout.Width(100));
-
-        if (GUILayout.Button("Add box", GUILayout.Width(70), GUILayout.Height(20)))
-        {
-            _level.Items = AddElementToArray(_level.Items);
-        }
 
         GUILayout.EndHorizontal();
 
