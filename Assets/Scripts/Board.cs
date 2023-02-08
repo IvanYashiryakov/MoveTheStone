@@ -30,6 +30,25 @@ public class Board : MonoBehaviour
     [HideInInspector] public UnityAction<bool> AllMatchedItemsDestroyed;
     [HideInInspector] public UnityAction<int> PreviousMovesCountChanged;
 
+    public bool IsLevelDone()
+    {
+        if (_previousMoves.Count - 1 != _level.MoveCount)
+            return false;
+
+        for (int w = 0; w < Width; w++)
+        {
+            for (int h = 0; h < Height; h++)
+            {
+                if (_tiles[w, h].Item != null)
+                {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
     public void GenerateLevel(Level level)
     {
         _level = level;

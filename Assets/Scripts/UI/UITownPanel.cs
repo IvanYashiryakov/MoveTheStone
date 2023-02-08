@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UITownPanel : MonoBehaviour
 {
     [SerializeField] private Game _game;
+    [SerializeField] private PlayerStats _playerStats;
     [SerializeField] private UILevelButtonView _template;
     [SerializeField] private Transform _container;
-    [SerializeField] private PlayerStats _playerStats;
     [SerializeField] private GameObject _gamePanel;
 
     private List<UILevelButtonView> _levelButtons;
@@ -22,8 +23,41 @@ public class UITownPanel : MonoBehaviour
         }
     }
 
-    private void Start()
+    public void InitPanel(int countryIndex, int townIndex)
     {
+        _countryIndex = countryIndex;
+        _townIndex = townIndex;
+        CreateLevelButtons();
+        UpdateLevelButtons();
+    }
+
+    public void UpdateLevelButtons()
+    {
+        for (int i = 0; i < _levelButtons.Count; i++)
+        {
+            _levelButtons[i].enabled = true;
+
+            if (_playerStats.GetLevelStatus(_countryIndex, _townIndex, i) == ProgressStatus.Done)
+            {
+                _levelButtons[i].GetComponent<Image>().color = Color.green;
+            }
+            else if (_playerStats.GetLevelStatus(_countryIndex, _townIndex, i) == ProgressStatus.Inactive)
+            {
+                _levelButtons[i].GetComponent<Image>().color = Color.red;
+                _levelButtons[i].enabled = false;
+            }
+            else
+            {
+                _levelButtons[i].GetComponent<Image>().color = Color.yellow;
+            }
+        }
+    }
+
+    private void CreateLevelButtons()
+    {
+        if (_levelButtons != null)
+            return;
+
         _levelButtons = new List<UILevelButtonView>();
 
         for (int i = 0; i < 24; i++)
@@ -33,12 +67,6 @@ public class UITownPanel : MonoBehaviour
             levelButton.ButtonClicked += OnLevelButtonClicked;
             _levelButtons.Add(levelButton);
         }
-    }
-
-    public void InitPanel(int countryIndex, int townIndex)
-    {
-        _countryIndex = countryIndex;
-        _townIndex = townIndex;
     }
 
     private void OnLevelButtonClicked(int levelNumber)
