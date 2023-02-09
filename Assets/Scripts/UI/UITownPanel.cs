@@ -41,14 +41,14 @@ public class UITownPanel : MonoBehaviour
             {
                 _levelButtons[i].GetComponent<Image>().color = Color.green;
             }
-            else if (_playerStats.GetLevelStatus(_countryIndex, _townIndex, i) == ProgressStatus.Inactive)
+            else if (_playerStats.GetLevelStatus(_countryIndex, _townIndex, i) == ProgressStatus.Active)
             {
-                _levelButtons[i].GetComponent<Image>().color = Color.red;
-                _levelButtons[i].enabled = false;
+                _levelButtons[i].GetComponent<Image>().color = Color.yellow;
             }
             else
             {
-                _levelButtons[i].GetComponent<Image>().color = Color.yellow;
+                _levelButtons[i].GetComponent<Image>().color = Color.red;
+                _levelButtons[i].enabled = false;
             }
         }
     }

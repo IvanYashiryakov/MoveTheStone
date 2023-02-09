@@ -43,6 +43,17 @@ public class PlayerStats : MonoBehaviour
 #endif
     }
 
+    public void Load()
+    {
+        LoadExtern();
+    }
+
+    public void ResetAllProgressAndSave()
+    {
+        ResetAll();
+        Save();
+    }
+
     private ProgressStatus[] LevelsToArray()
     {
         ProgressStatus[] result = new ProgressStatus[_progressInfo.Levels.GetLength(0) * _progressInfo.Levels.GetLength(1) * _progressInfo.Levels.GetLength(2)];
@@ -80,7 +91,22 @@ public class PlayerStats : MonoBehaviour
             }
         }
 
-        SetFirstLevelsActiveIfNot();
+        if (IsSaveCurrupted() == true)
+            ResetAllProgressAndSave();
+    }
+
+    private bool IsSaveCurrupted()
+    {
+        for (int c = 0; c < _progressInfo.Levels.GetLength(0); c++)
+        {
+            for (int t = 0; t < _progressInfo.Levels.GetLength(1); t++)
+            {
+                if (_progressInfo.Levels[c, t, 0] == ProgressStatus.Inactive)
+                    return true;
+            }
+        }
+
+        return false;
     }
 
     public int GetAvailableLevelsCount(int country, int town)
@@ -105,6 +131,17 @@ public class PlayerStats : MonoBehaviour
             Towns = new ProgressStatus[6, 4],
             Levels = new ProgressStatus[6, 4, 24]
         };
+
+        for (int c = 0; c < _progressInfo.Levels.GetLength(0); c++)
+        {
+            for (int t = 0; t < _progressInfo.Levels.GetLength(1); t++)
+            {
+                for (int l = 0; l < _progressInfo.Levels.GetLength(2); l++)
+                {
+                    _progressInfo.Levels[c, t, l] = ProgressStatus.Inactive;
+                }
+            }
+        }
 
         SetFirstLevelsActiveIfNot();
     }
