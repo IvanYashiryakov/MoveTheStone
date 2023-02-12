@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c5e1f49730f38342b9034663af1a69e, type: 3}
   m_Name: C5
   m_EditorClassIdentifier: 
-  Name: Africa
+  Name: "\u0412\u0443\u043B\u043A\u0430\u043D\u044B"
   Towns:
   - {fileID: 11400000, guid: 7f1fcbd87ef9d7b42bc315dce364abc9, type: 2}
   - {fileID: 11400000, guid: c3bc4c1fb165a514f9106a22bf4379fc, type: 2}
   - {fileID: 11400000, guid: 00896daba13852b4eac6b157aa37f3b5, type: 2}
   - {fileID: 11400000, guid: f1ff614ef5ba90c4f81a1ff63746b399, type: 2}
+  Background: {fileID: 21300000, guid: 4a1869b33315a81448280ff7b2e7b313, type: 3}

@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c5e1f49730f38342b9034663af1a69e, type: 3}
   m_Name: C1
   m_EditorClassIdentifier: 
-  Name: North America
+  Name: "\u041B\u0435\u0441"
   Towns:
   - {fileID: 11400000, guid: fd06a5d0af22f7c448eb2c83aec174d1, type: 2}
   - {fileID: 11400000, guid: 9047d29fdde8d6b4f8d4c0c6128c02e0, type: 2}
   - {fileID: 11400000, guid: 20771fb3336a2874086cbedebc1b0b54, type: 2}
   - {fileID: 11400000, guid: 879198eaaf301764e809595f29b5f2ae, type: 2}
+  Background: {fileID: 21300000, guid: f2ba91e4c202783438b1b35de271726c, type: 3}

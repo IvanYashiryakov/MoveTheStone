@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
 
@@ -171,7 +169,7 @@ public class PlayerStats : MonoBehaviour
     {
         _progressInfo.Levels[currentCountry, currentTown, currentLevel] = ProgressStatus.Done;
 
-        if (currentLevel + 1 < 24)
+        if (currentLevel + 1 < 24 && _progressInfo.Levels[currentCountry, currentTown, currentLevel + 1] != ProgressStatus.Done)
             _progressInfo.Levels[currentCountry, currentTown, currentLevel + 1] = ProgressStatus.Active;
 
         Save();

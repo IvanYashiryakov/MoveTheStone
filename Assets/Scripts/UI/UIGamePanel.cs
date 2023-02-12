@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class UIGamePanel : MonoBehaviour
 {
@@ -9,6 +6,8 @@ public class UIGamePanel : MonoBehaviour
     [SerializeField] private PlayerStats _playerStats;
     [SerializeField] private UITownPanel _townPanel;
     [SerializeField] private GameObject _doneButton;
+
+    private int _doneClickCount = 0;
 
     private void OnEnable()
     {
@@ -36,11 +35,22 @@ public class UIGamePanel : MonoBehaviour
 
     public void ButtonDoneClick()
     {
+        _doneClickCount++;
         _doneButton.SetActive(false);
 
         if (_game.TryLoadNextLevelInTown() == false)
         {
+            Yandex.Instance.ShowInterstitial();
+            _doneClickCount = 0;
             ExitLevel();
+
+            return;
+        }
+
+        if(_doneClickCount >= 3)
+        {
+            Yandex.Instance.ShowInterstitial();
+            _doneClickCount = 0;
         }
     }
 }

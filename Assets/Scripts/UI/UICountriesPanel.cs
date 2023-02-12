@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -56,6 +54,7 @@ public class UICountriesPanel : MonoBehaviour
     private void SetCountryAndTowns(int index)
     {
         _countryName.text = _game.Countires[index].Name;
+        _game.SetBackground(index);
         Town[] towns = _game.Countires[index].Towns;
 
         for (int i = 0; i < towns.Length; i++)

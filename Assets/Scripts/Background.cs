@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
@@ -14,5 +12,8 @@ public class Background : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    
+    public void SetBackground(Sprite sprite)
+    {
+        _spriteRenderer.sprite = sprite;
+    }
 }

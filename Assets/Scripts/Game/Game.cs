@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,6 +9,7 @@ public class Game : MonoBehaviour
     [SerializeField] private Level[] _levels;
     [SerializeField] private Board _board;
     [SerializeField] private PlayerStats _playerStats;
+    [SerializeField] private Background _background;
 
     private int _currentCountry = 0;
     private int _currentTown = 0;
@@ -30,6 +29,11 @@ public class Game : MonoBehaviour
     {
         _board.AllItemsDropped -= OnAllItemsDropped;
         _board.AllMatchedItemsDestroyed -= OnAllMatchedItemsDestroyed;
+    }
+
+    public void SetBackground(int index)
+    {
+        _background.SetBackground(_countries[index].Background);
     }
 
     public bool TryLoadNextLevelInTown()

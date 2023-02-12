@@ -32,7 +32,31 @@ mergeInto(LibraryManager.library, {
 	},
 
 	ShowRewAdv: function () {
-		ysdk.adv.showRewardedVideo({callbacks:{}})
+		ysdk.adv.showRewardedVideo({
+			callbacks: {
+				onOpen: function () {
+					console.log('Video ad open.');
+				},
+				onRewarded: function () {
+					myGameInstance.SendMessage('Yandex', 'OnRewardedHint');
+					console.log('Rewarded!');
+				},
+				onClose: function () {
+					console.log('Video ad closed.');
+				}, 
+				onError: function(e) {
+					console.log('Error while open video ad:', e);
+				}
+			}
+		})
+	},
+	
+	GetLang : function () {
+		var lang = ysdk.environment.i18n.lang;
+		var bufferSize = lengthBytesUTF8(lang) + 1;
+		var buffer = _malloc(bufferSize);
+		stringToUTF8(lang, buffer, bufferSize);
+		return buffer;
 	},
 
 });
