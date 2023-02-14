@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c5e1f49730f38342b9034663af1a69e, type: 3}
   m_Name: C5
   m_EditorClassIdentifier: 
-  EnName: Vulkan
-  RuName: "\u0412\u0443\u043B\u043A\u0430\u043D"
-  TrName: Volkan
+  EnName: Night
+  RuName: "\u041D\u043E\u0447\u044C"
+  TrName: Gece
   Towns:
   - {fileID: 11400000, guid: 7f1fcbd87ef9d7b42bc315dce364abc9, type: 2}
   - {fileID: 11400000, guid: c3bc4c1fb165a514f9106a22bf4379fc, type: 2}

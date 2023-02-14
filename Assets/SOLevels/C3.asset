@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c5e1f49730f38342b9034663af1a69e, type: 3}
   m_Name: C3
   m_EditorClassIdentifier: 
-  EnName: Mountains
-  RuName: "\u0413\u043E\u0440\u044B"
-  TrName: "Da\u011Flar"
+  EnName: Clear sky
+  RuName: "\u042F\u0441\u043D\u043E\u0435 \u043D\u0435\u0431\u043E"
+  TrName: "A\xE7\u0131k hava"
   Towns:
   - {fileID: 11400000, guid: 44c3495703ebc044dad07c61f2716085, type: 2}
   - {fileID: 11400000, guid: 107bbde158e0ebc4489be300b805aa82, type: 2}

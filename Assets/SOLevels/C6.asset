@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c5e1f49730f38342b9034663af1a69e, type: 3}
   m_Name: C6
   m_EditorClassIdentifier: 
-  EnName: Night mountains
-  RuName: "\u041D\u043E\u0447\u043D\u044B\u0435 \u0433\u043E\u0440\u044B"
-  TrName: "Gece da\u011Flar\u0131"
+  EnName: After rain
+  RuName: "\u041F\u043E\u0441\u043B\u0435 \u0434\u043E\u0436\u0434\u044F"
+  TrName: "Ya\u011Fmurdan sonra"
   Towns:
   - {fileID: 11400000, guid: 4bc8c55a7e1691040b9560f22c3d8005, type: 2}
   - {fileID: 11400000, guid: d7c6f4a7379d499439a6ca8b094931f7, type: 2}

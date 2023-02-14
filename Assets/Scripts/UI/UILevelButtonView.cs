@@ -33,24 +33,24 @@ public class UILevelButtonView : MonoBehaviour
 
     public void SetState(ProgressStatus status)
     {
-        Sprite sprite = null;
-        _button.enabled = true;
+        //Sprite sprite = null;
+        _button.interactable = true;
 
         switch (status)
         {
             case ProgressStatus.Active:
-                sprite = _spriteActive;
+                //sprite = _spriteActive;
                 break;
             case ProgressStatus.Inactive:
-                sprite = _spriteInactive;
-                _button.enabled = false;
+                //sprite = _spriteInactive;
+                _button.interactable = false;
                 break;
             case ProgressStatus.Done:
-                sprite = _spriteDone;
+                //sprite = _spriteDone;
                 break;
         }
 
-        _button.GetComponent<Image>().sprite = sprite;
+        //_button.GetComponent<Image>().sprite = sprite;
     }
 
     private void OnButtonClick()

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c5e1f49730f38342b9034663af1a69e, type: 3}
   m_Name: C4
   m_EditorClassIdentifier: 
-  EnName: Night forest
-  RuName: "\u041D\u043E\u0447\u043D\u043E\u0439 \u043B\u0435\u0441"
-  TrName: Gece orman
+  EnName: Sunset
+  RuName: "\u0417\u0430\u043A\u0430\u0442"
+  TrName: "G\xFCn bat\u0131m\u0131"
   Towns:
   - {fileID: 11400000, guid: 83e73356de09c3f4293c75c0dcbedf94, type: 2}
   - {fileID: 11400000, guid: 4c5a948004d5be74daf3c89f206a9832, type: 2}
