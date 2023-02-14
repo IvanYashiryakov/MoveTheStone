@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90307dc364ec9ac4493c1a7c94373308, type: 3}
   m_Name: C4_T4
   m_EditorClassIdentifier: 
-  EnName: Zone 4
-  RuName: "\u0417\u043E\u043D\u0430 4"
-  TrName: Alan 4
+  EnName: Chapter 4
+  RuName: "\u0413\u043B\u0430\u0432\u0430 4"
+  TrName: "B\xF6l\xFCm 4"
   Levels:
   - {fileID: 11400000, guid: 56a2c4528c0a2704e87a80f66b93d77d, type: 2}
   - {fileID: 11400000, guid: 57c427c10fa82ce4fb7e02ba66961db2, type: 2}

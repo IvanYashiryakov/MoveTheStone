@@ -10,6 +10,9 @@ public class UILevelButtonView : MonoBehaviour
     [SerializeField] private Sprite _spriteDone;
     [SerializeField] private Sprite _spriteActive;
     [SerializeField] private Sprite _spriteInactive;
+    [SerializeField] private Color _colorDone;
+    [SerializeField] private Color _colorActive;
+    [SerializeField] private Color _colorInactive;
 
     private int _levelNumber;
 
@@ -39,13 +42,16 @@ public class UILevelButtonView : MonoBehaviour
         switch (status)
         {
             case ProgressStatus.Active:
+                _button.GetComponent<Image>().color = _colorActive;
                 //sprite = _spriteActive;
                 break;
             case ProgressStatus.Inactive:
                 //sprite = _spriteInactive;
+                _button.GetComponent<Image>().color = _colorInactive;
                 _button.interactable = false;
                 break;
             case ProgressStatus.Done:
+                _button.GetComponent<Image>().color = _colorDone;
                 //sprite = _spriteDone;
                 break;
         }
