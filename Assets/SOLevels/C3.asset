@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c5e1f49730f38342b9034663af1a69e, type: 3}
   m_Name: C3
   m_EditorClassIdentifier: 
-  Name: "\u0413\u043E\u0440\u044B"
+  EnName: Mountains
+  RuName: "\u0413\u043E\u0440\u044B"
+  TrName: "Da\u011Flar"
   Towns:
   - {fileID: 11400000, guid: 44c3495703ebc044dad07c61f2716085, type: 2}
   - {fileID: 11400000, guid: 107bbde158e0ebc4489be300b805aa82, type: 2}
   - {fileID: 11400000, guid: 85f154ef6848bcd4c8a0b003ff4d82ad, type: 2}
   - {fileID: 11400000, guid: 104ba6da89a78384fa27d265abf8ffec, type: 2}
-  Background: {fileID: 21300000, guid: 15d3b573c2d284048a126ce5369060a6, type: 3}
+  Background: {fileID: 21300000, guid: 9b476933b2daf1f4bad8fb8be8b9baf1, type: 3}

@@ -5,7 +5,6 @@ using UnityEngine;
 public class Yandex : MonoBehaviour
 {
     [SerializeField] private Game _game;
-    [SerializeField] private TextMeshProUGUI _languageText;
 
     public static Yandex Instance;
     public string CurrentLanguage;
@@ -25,7 +24,6 @@ public class Yandex : MonoBehaviour
 #if UNITY_EDITOR == false
             CurrentLanguage = GetLang();
 #endif
-            _languageText.text = CurrentLanguage;
             DontDestroyOnLoad(gameObject);
         }
         else

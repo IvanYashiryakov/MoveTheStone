@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90307dc364ec9ac4493c1a7c94373308, type: 3}
   m_Name: C4_T3
   m_EditorClassIdentifier: 
-  Name: Panama
+  EnName: Zone 3
+  RuName: "\u0417\u043E\u043D\u0430 3"
+  TrName: Alan 3
   Levels:
   - {fileID: 11400000, guid: 69d1d409cb3ffb34ebb844ad21e35c42, type: 2}
   - {fileID: 11400000, guid: fa6bc73650964204d98e0a695cabbaf2, type: 2}

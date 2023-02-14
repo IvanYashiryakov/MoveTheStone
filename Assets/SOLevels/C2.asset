@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c5e1f49730f38342b9034663af1a69e, type: 3}
   m_Name: C2
   m_EditorClassIdentifier: 
-  Name: "\u041F\u043E\u0434\u0437\u0435\u043C\u0435\u043B\u044C\u0435"
+  EnName: Dungeon
+  RuName: "\u041F\u043E\u0434\u0437\u0435\u043C\u0435\u043B\u044C\u0435"
+  TrName: Zindan
   Towns:
   - {fileID: 11400000, guid: 8942d6436aba6db448ef8e9b0eebb2ff, type: 2}
   - {fileID: 11400000, guid: ecdf90612bb59b9459b9a8b6c0071328, type: 2}
   - {fileID: 11400000, guid: e3e0d7eb7ef228d40a94cca48b70f56c, type: 2}
   - {fileID: 11400000, guid: 737422d8bd451d64e819e4f069f16fe7, type: 2}
-  Background: {fileID: 21300000, guid: ab7b2867bd6b45340bc6f32794439440, type: 3}
+  Background: {fileID: 21300000, guid: 1ea1b0b53b691ee4fae039a4650a7242, type: 3}

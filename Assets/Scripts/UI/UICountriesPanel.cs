@@ -53,16 +53,31 @@ public class UICountriesPanel : MonoBehaviour
 
     private void SetCountryAndTowns(int index)
     {
-        _countryName.text = _game.Countires[index].Name;
+        SetCountryName(index);
         _game.SetBackground(index);
         Town[] towns = _game.Countires[index].Towns;
 
         for (int i = 0; i < towns.Length; i++)
         {
-            _townNames[i].text = towns[i].Name;
+            _townNames[i].text = Yandex.Instance.CurrentLanguage switch
+            {
+                "ru" => towns[i].RuName,
+                "tr" => towns[i].TrName,
+                _ => towns[i].EnName,
+            };
         }
 
         SetTowns();
+    }
+
+    private void SetCountryName(int index)
+    {
+        _countryName.text = Yandex.Instance.CurrentLanguage switch
+        {
+            "ru" => _game.Countires[index].RuName,
+            "tr" => _game.Countires[index].TrName,
+            _ => _game.Countires[index].EnName,
+        };
     }
 
     private void SetTowns()

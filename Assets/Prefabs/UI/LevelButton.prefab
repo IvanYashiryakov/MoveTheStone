@@ -38,7 +38,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -407, y: 269}
-  m_SizeDelta: {x: 100, y: 90}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3333468410219990931
 CanvasRenderer:
@@ -62,6 +62,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _button: {fileID: 3333468410219990940}
   _text: {fileID: 3333468411887648797}
+  _spriteDone: {fileID: 21300000, guid: 2cdc2737710ee854da1cbe0a51d0531a, type: 3}
+  _spriteActive: {fileID: 21300000, guid: ed2252599b5248945b5ea3e89092fd52, type: 3}
+  _spriteInactive: {fileID: 21300000, guid: d2fb26beecd5b1a499f6dc4240ef486a, type: 3}
 --- !u!114 &3333468410219990941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,8 +85,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 2cdc2737710ee854da1cbe0a51d0531a, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -228,12 +231,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 64
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 64
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512

@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class UIMoveCount : MonoBehaviour
 {
@@ -9,12 +10,13 @@ public class UIMoveCount : MonoBehaviour
 
     [SerializeField] private Board _board;
     [SerializeField] private TMP_Text _text;
+    [SerializeField] private Button _undoButton;
 
     private void OnEnable()
     {
         Localization();
         _board.PreviousMovesCountChanged += OnPreviousMovesCountChanged;
-        _text.text = _textFirstPart + (_board.CurrentMove - 1).ToString() + _textMiddlePart + _board.Level.MoveCount;
+        _text.text = _textFirstPart + (_board.CurrentMove).ToString() + _textMiddlePart + _board.Level.MoveCount;
     }
 
     private void OnDisable()
@@ -24,13 +26,15 @@ public class UIMoveCount : MonoBehaviour
 
     private void OnPreviousMovesCountChanged(int count)
     {
-        if (count - 1 > _board.Level.MoveCount)
+        _undoButton.interactable = count > 1;
+
+        if (count > _board.Level.MoveCount)
         {
             _text.text = _textFail;
         }
         else
         {
-            _text.text = _textFirstPart + (count - 1).ToString() + _textMiddlePart + _board.Level.MoveCount;
+            _text.text = _textFirstPart + (count).ToString() + _textMiddlePart + _board.Level.MoveCount;
         }
     }
 

@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90307dc364ec9ac4493c1a7c94373308, type: 3}
   m_Name: C1_T1
   m_EditorClassIdentifier: 
-  Name: Boston
+  EnName: Zone 1
+  RuName: "\u0417\u043E\u043D\u0430 1"
+  TrName: Alan 1
   Levels:
   - {fileID: 11400000, guid: dd77321f0d217bf4ba11841c130d6eb9, type: 2}
   - {fileID: 11400000, guid: e6db4d3bac746d04696e35bdde598c17, type: 2}
