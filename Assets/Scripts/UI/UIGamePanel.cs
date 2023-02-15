@@ -8,7 +8,6 @@ public class UIGamePanel : MonoBehaviour
     [SerializeField] private UITownPanel _townPanel;
     [SerializeField] private GameObject _doneButton;
     [SerializeField] private GameObject _restartButton;
-    [SerializeField] private GameObject _undoButton;
 
     private int _doneClickCount = 0;
 

@@ -74,8 +74,8 @@ MonoBehaviour:
   - X: 2
     Y: 2
     Direction: 1
-  - X: 5
-    Y: 2
+  - X: 2
+    Y: 5
     Direction: 3
   - X: 2
     Y: 2

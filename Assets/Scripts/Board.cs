@@ -21,6 +21,7 @@ public class Board : MonoBehaviour
     private Hint _hint;
     private bool _isHintShowing;
 
+    public bool IsShowingHint => _isHintShowing;
     public Tile[,] Tiles => _tiles;
     public Level Level => _level;
     public int CurrentMove => _previousMoves.Count;
@@ -28,6 +29,7 @@ public class Board : MonoBehaviour
     [HideInInspector] public UnityAction<bool> AllItemsDropped;
     [HideInInspector] public UnityAction<bool> AllMatchedItemsDestroyed;
     [HideInInspector] public UnityAction<int> PreviousMovesCountChanged;
+    [HideInInspector] public UnityAction HintStarted;
 
     public bool IsLevelDone()
     {
@@ -67,13 +69,16 @@ public class Board : MonoBehaviour
         return false;
     }
 
-    public void GenerateLevel(Level level)
+    public void GenerateLevel(Level level, bool showHint)
     {
         _level = level;
         Width = _level.BoardWidth;
         Height = _level.BoardHeight;
         CreateTiles();
         RestartLevel();
+
+        if (showHint == true)
+            StartNextHint();
     }
 
     public void RestartLevel()
@@ -171,9 +176,7 @@ public class Board : MonoBehaviour
             CreateItems(_previousMoves.Pop());
             SaveMove();
             PreviousMovesCountChanged?.Invoke(_previousMoves.Count);
-
-            if (_isHintShowing == true)
-                StartNextHint();
+            TryStartNextHint();
         }
     }
 
@@ -185,12 +188,12 @@ public class Board : MonoBehaviour
 
     public void StartNextHint()
     {
+        HintStarted?.Invoke();
         _isHintShowing = true;
         int currentHint = _previousMoves.Count - 1;
 
         if (currentHint >= _level.Hints.Length)
         {
-            //StopHint();
             return;
         }
 

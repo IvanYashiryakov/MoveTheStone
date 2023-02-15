@@ -48,24 +48,6 @@ public class Game : MonoBehaviour
         return false;
     }
 
-    public void ButtonNextClick()
-    {
-        _currentLevel++;
-        if (_currentLevel >= _levels.Length)
-            _currentLevel = 0;
-
-        GenerateLevel(_currentLevel);
-    }
-
-    public void ButtonPreviousClick()
-    {
-        _currentLevel--;
-        if (_currentLevel < 0)
-            _currentLevel = _levels.Length - 1;
-
-        GenerateLevel(_currentLevel);
-    }
-
     public void ButtonLoadPreviousMove()
     {
         _board.LoadPreviousMove();
@@ -88,17 +70,17 @@ public class Game : MonoBehaviour
         _currentCountry = country;
         _currentTown = town;
         _currentLevel = level;
-        _board.GenerateLevel(_countries[country].Towns[town].Levels[level]);
+        bool showHint = false;
+
+        if (country == 0 && town == 0 && level < 4)
+            showHint = true;
+
+        _board.GenerateLevel(_countries[country].Towns[town].Levels[level], showHint);
     }
 
     public void ExitLevel()
     {
         _board.ExitLevel();
-    }
-
-    private void GenerateLevel(int levelNumber)
-    {
-        _board.GenerateLevel(_levels[levelNumber]);
     }
 
     private void OnAllItemsDropped(bool isNextBoardActionNeeded)

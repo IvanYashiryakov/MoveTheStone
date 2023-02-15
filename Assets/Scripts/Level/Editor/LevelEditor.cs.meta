@@ -4,12 +4,12 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - _package: {fileID: 2800000, guid: 91b97ef844b44314d984b77361325eda, type: 3}
-  - _redWood: {fileID: 2800000, guid: fef7e72d444d745448fcd1e4857ef558, type: 3}
-  - _wood: {fileID: 2800000, guid: 4a54fe70f5c5ffb44a4621bd5c9fb4b4, type: 3}
-  - _green: {fileID: 2800000, guid: 6cc04aa3bcae2be40bbb2e0b2ebd4818, type: 3}
-  - _baggage: {fileID: 2800000, guid: 1ba43c27cc46a5e48864290eb6159e0c, type: 3}
-  - _steel: {fileID: 2800000, guid: 495f12629124d634ab2ccee8e1c49d02, type: 3}
+  - _package: {fileID: 2800000, guid: 5576d398438178b418232d8ec1b28c86, type: 3}
+  - _redWood: {fileID: 2800000, guid: 6806904f1ed294e4eb1d5898bad264ec, type: 3}
+  - _wood: {fileID: 2800000, guid: b971fad07f553374593d76fe6b2ddda3, type: 3}
+  - _green: {fileID: 2800000, guid: ec91766f35c867447b6d975b2e308d98, type: 3}
+  - _baggage: {fileID: 2800000, guid: 62fcb34eac93209499dfab82257470b1, type: 3}
+  - _steel: {fileID: 2800000, guid: f35e470f7303f93428baa707a44f6615, type: 3}
   - _skin: {fileID: 11400000, guid: 6f429d69bec7e704485d28d8897935b0, type: 2}
   - _defaultSkin: {fileID: 11400000, guid: 19985df2f2a078a468ba39ca384e734c, type: 2}
   executionOrder: 0

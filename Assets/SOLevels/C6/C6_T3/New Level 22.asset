@@ -70,6 +70,9 @@ MonoBehaviour:
   - Id: 5
     X: 4
     Y: 2
+  - Id: 5
+    X: 3
+    Y: 5
   Hints:
   - X: 4
     Y: 3

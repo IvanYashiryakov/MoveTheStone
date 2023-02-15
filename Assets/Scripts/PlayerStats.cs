@@ -10,7 +10,9 @@ public class ProgressInfo
 
 public class YandexSave
 {
-    public ProgressStatus[] Data;
+    public ProgressStatus[] Levels;
+    public ProgressStatus[] Towns;
+    public ProgressStatus[] Countries;
 }
 
 public class PlayerStats : MonoBehaviour
@@ -21,21 +23,36 @@ public class PlayerStats : MonoBehaviour
     [DllImport("__Internal")]
     private static extern void LoadExtern();
 
+    public static PlayerStats Instance;
+
     private ProgressInfo _progressInfo;
     private YandexSave _data;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void Start()
     {
         ResetAll();
 #if UNITY_EDITOR == false
-        //LoadExtern();
+        LoadExtern();
 #endif
     }
 
     public void Save()
     {
 #if UNITY_EDITOR == false
-        _data.Data = LevelsToArray();
+        _data.Levels = LevelsToArray();
         string jsonString = JsonUtility.ToJson(_data);
         SaveExtern(jsonString);
 #endif
@@ -72,6 +89,23 @@ public class PlayerStats : MonoBehaviour
         return result;
     }
 
+    private ProgressStatus[] TownsToArray()
+    {
+        ProgressStatus[] result = new ProgressStatus[_progressInfo.Towns.GetLength(0) * _progressInfo.Towns.GetLength(1)];
+        int i = 0;
+
+        for (int c = 0; c < _progressInfo.Towns.GetLength(0); c++)
+        {
+            for (int t = 0; t < _progressInfo.Towns.GetLength(1); t++)
+            {
+                result[i] = _progressInfo.Towns[c, t];
+                i++;
+            }
+        }
+
+        return result;
+    }
+
     public void SetProgressInfo(string value)
     {
         _data = JsonUtility.FromJson<YandexSave>(value);
@@ -83,7 +117,7 @@ public class PlayerStats : MonoBehaviour
             {
                 for (int l = 0; l < _progressInfo.Levels.GetLength(2); l++)
                 {
-                    _progressInfo.Levels[c, t, l] = _data.Data[i];
+                    _progressInfo.Levels[c, t, l] = _data.Levels[i];
                     i++;
                 }
             }

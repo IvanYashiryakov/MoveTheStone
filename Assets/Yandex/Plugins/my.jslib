@@ -12,7 +12,9 @@ mergeInto(LibraryManager.library, {
   	LoadExtern: function () {
 		console.log('Loading...');
 		player.getData().then(function (_data) {
+			console.log('Done player.getData');
 			const myJSON = JSON.stringify(_data);
+			console.log('JSON stringified');
 			myGameInstance.SendMessage('PlayerStats', 'SetProgressInfo', myJSON);
 			console.log('Loaded.');
 		});
@@ -56,6 +58,7 @@ mergeInto(LibraryManager.library, {
 		var bufferSize = lengthBytesUTF8(lang) + 1;
 		var buffer = _malloc(bufferSize);
 		stringToUTF8(lang, buffer, bufferSize);
+		console.log('Language detected.');
 		return buffer;
 	},
 

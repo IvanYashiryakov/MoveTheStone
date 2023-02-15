@@ -11,6 +11,8 @@ public class UICountriesPanel : MonoBehaviour
     [SerializeField] private TMP_Text[] _townNames;
     [SerializeField] private TMP_Text[] _completeLevelsCount;
     [SerializeField] private UITownPanel _townPanel;
+    [SerializeField] private Color _light;
+    [SerializeField] private Color _dark;
 
     private int _currentCountryIndex = 0;
 
@@ -51,8 +53,24 @@ public class UICountriesPanel : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    private void SetColor(int index)
+    {
+        Color targetColor;
+
+        if (index == 0 || index == 2 || index == 5)
+            targetColor = _dark;
+        else
+            targetColor = _light;
+
+        _countryName.color = targetColor;
+
+        foreach (var text in _completeLevelsCount)
+            text.color = targetColor;
+    }
+
     private void SetCountryAndTowns(int index)
     {
+        SetColor(index);
         SetCountryName(index);
         _game.SetBackground(index);
         Town[] towns = _game.Countires[index].Towns;
