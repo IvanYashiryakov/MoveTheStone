@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class ChooseOrientation : MonoBehaviour
@@ -12,24 +11,9 @@ public class ChooseOrientation : MonoBehaviour
     private readonly Vector3 _cameraLandscapePostion = new Vector3(3f, 4, -10);
     private readonly float _cameraLandscapeSize = 5;
 
-    private readonly float _delayTime = 0.5f;
-
     private void OnEnable()
     {
         SetOrientation();
-        //StartCoroutine(CheckOrientationChange());
-    }
-
-    private IEnumerator CheckOrientationChange()
-    {
-        WaitForSeconds delay = new WaitForSeconds(_delayTime);
-
-        while (this.enabled == true)
-        {
-            SetOrientation();
-
-            yield return delay;
-        }
     }
 
     private void SetOrientation()

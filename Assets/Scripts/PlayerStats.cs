@@ -210,10 +210,38 @@ public class PlayerStats : MonoBehaviour
             _progressInfo.Countries[c] = ProgressStatus.Inactive;
         }
 
-        SetFirstLevelActiveIfNot();
+        SetFirstLevelActive();
+        SetAllLevelActive();
     }
 
-    private void SetFirstLevelActiveIfNot()
+    private void SetAllLevelActive()
+    {
+        for (int c = 0; c < _progressInfo.Levels.GetLength(0); c++)
+        {
+            for (int t = 0; t < _progressInfo.Levels.GetLength(1); t++)
+            {
+                for (int l = 0; l < _progressInfo.Levels.GetLength(2); l++)
+                {
+                    _progressInfo.Levels[c, t, l] = ProgressStatus.Active;
+                }
+            }
+        }
+
+        for (int c = 0; c < _progressInfo.Towns.GetLength(0); c++)
+        {
+            for (int t = 0; t < _progressInfo.Towns.GetLength(1); t++)
+            {
+                _progressInfo.Towns[c, t] = ProgressStatus.Active;
+            }
+        }
+
+        for (int c = 0; c < _progressInfo.Countries.Length; c++)
+        {
+            _progressInfo.Countries[c] = ProgressStatus.Active;
+        }
+    }
+
+    private void SetFirstLevelActive()
     {
         _progressInfo.Countries[0] = ProgressStatus.Active;
         _progressInfo.Towns[0, 0] = ProgressStatus.Active;
