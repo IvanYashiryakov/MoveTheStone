@@ -3,16 +3,16 @@ using UnityEngine;
 
 public class ProgressInfo
 {
-    public ProgressStatus[] Countires;
+    public ProgressStatus[] Countries;
     public ProgressStatus[,] Towns;
     public ProgressStatus[,,] Levels;
 }
 
 public class YandexSave
 {
-    public ProgressStatus[] Levels;
-    public ProgressStatus[] Towns;
     public ProgressStatus[] Countries;
+    public ProgressStatus[] Towns;
+    public ProgressStatus[] Levels;
 }
 
 public class PlayerStats : MonoBehaviour
@@ -53,6 +53,8 @@ public class PlayerStats : MonoBehaviour
     {
 #if UNITY_EDITOR == false
         _data.Levels = LevelsToArray();
+        _data.Towns = TownsToArray();
+        _data.Countries = _progressInfo.Countries;
         string jsonString = JsonUtility.ToJson(_data);
         SaveExtern(jsonString);
 #endif
@@ -123,25 +125,45 @@ public class PlayerStats : MonoBehaviour
             }
         }
 
+        i = 0;
+        for (int c = 0; c < _progressInfo.Towns.GetLength(0); c++)
+        {
+            for (int t = 0; t < _progressInfo.Towns.GetLength(1); t++)
+            {
+                _progressInfo.Towns[c, t] = _data.Towns[i];
+                i++;
+            }
+        }
+
+        for (int c = 0; c < _progressInfo.Countries.Length; c++)
+        {
+            _progressInfo.Countries[c] = _data.Countries[c];
+        }
+
         if (IsSaveCurrupted() == true)
             ResetAllProgressAndSave();
     }
 
     private bool IsSaveCurrupted()
     {
+        int activeLevels = 0;
+
         for (int c = 0; c < _progressInfo.Levels.GetLength(0); c++)
         {
             for (int t = 0; t < _progressInfo.Levels.GetLength(1); t++)
             {
-                if (_progressInfo.Levels[c, t, 0] == ProgressStatus.Inactive)
-                    return true;
+                for (int l = 0; l < _progressInfo.Levels.GetLength(2); l++)
+                {
+                    if (_progressInfo.Levels[c, t, l] == ProgressStatus.Active)
+                        activeLevels++;
+                }
             }
         }
 
-        return false;
+        return activeLevels <= 1;
     }
 
-    public int GetAvailableLevelsCount(int country, int town)
+    public int GetDoneLevelsCount(int country, int town)
     {
         int result = 0;
 
@@ -159,7 +181,7 @@ public class PlayerStats : MonoBehaviour
         _data = new YandexSave();
         _progressInfo = new ProgressInfo
         {
-            Countires = new ProgressStatus[6],
+            Countries = new ProgressStatus[6],
             Towns = new ProgressStatus[6, 4],
             Levels = new ProgressStatus[6, 4, 24]
         };
@@ -175,23 +197,27 @@ public class PlayerStats : MonoBehaviour
             }
         }
 
-        SetFirstLevelsActiveIfNot();
-    }
-
-    private void SetFirstLevelsActiveIfNot()
-    {
-        for (int c = 0; c < 6; c++)
+        for (int c = 0; c < _progressInfo.Towns.GetLength(0); c++)
         {
-            _progressInfo.Countires[c] = ProgressStatus.Active;
-
-            for (int t = 0; t < 4; t++)
+            for (int t = 0; t < _progressInfo.Towns.GetLength(1); t++)
             {
-                _progressInfo.Towns[c, t] = ProgressStatus.Active;
-
-                if (_progressInfo.Levels[c, t, 0] == ProgressStatus.Inactive)
-                    _progressInfo.Levels[c, t, 0] = ProgressStatus.Active;
+                _progressInfo.Towns[c, t] = ProgressStatus.Inactive;
             }
         }
+
+        for (int c = 0; c < _progressInfo.Countries.Length; c++)
+        {
+            _progressInfo.Countries[c] = ProgressStatus.Inactive;
+        }
+
+        SetFirstLevelActiveIfNot();
+    }
+
+    private void SetFirstLevelActiveIfNot()
+    {
+        _progressInfo.Countries[0] = ProgressStatus.Active;
+        _progressInfo.Towns[0, 0] = ProgressStatus.Active;
+        _progressInfo.Levels[0, 0, 0] = ProgressStatus.Active;
     }
 
     public ProgressStatus GetLevelStatus(int country, int town, int level)
@@ -199,12 +225,42 @@ public class PlayerStats : MonoBehaviour
         return _progressInfo.Levels[country, town, level];
     }
 
+    public ProgressStatus GetTownStatus(int country, int town)
+    {
+        return _progressInfo.Towns[country, town];
+    }
+
+    public ProgressStatus GetCountryStatus(int country)
+    {
+        return _progressInfo.Countries[country];
+    }
+
     public void SetNextLevelAvailable(int currentCountry, int currentTown, int currentLevel)
     {
         _progressInfo.Levels[currentCountry, currentTown, currentLevel] = ProgressStatus.Done;
 
-        if (currentLevel + 1 < 24 && _progressInfo.Levels[currentCountry, currentTown, currentLevel + 1] != ProgressStatus.Done)
-            _progressInfo.Levels[currentCountry, currentTown, currentLevel + 1] = ProgressStatus.Active;
+        if (currentLevel + 1 < 24)
+        {
+            if (_progressInfo.Levels[currentCountry, currentTown, currentLevel + 1] != ProgressStatus.Done)
+                _progressInfo.Levels[currentCountry, currentTown, currentLevel + 1] = ProgressStatus.Active;
+        }
+        else if (currentTown + 1 < 4)
+        {
+            if (_progressInfo.Towns[currentCountry, currentTown + 1] == ProgressStatus.Inactive)
+            {
+                _progressInfo.Towns[currentCountry, currentTown + 1] = ProgressStatus.Active;
+                _progressInfo.Levels[currentCountry, currentTown + 1, 0] = ProgressStatus.Active;
+            }
+        }
+        else if (currentCountry + 1 < 6)
+        {
+            if (_progressInfo.Countries[currentCountry + 1] == ProgressStatus.Inactive)
+            {
+                _progressInfo.Countries[currentCountry + 1] = ProgressStatus.Active;
+                _progressInfo.Towns[currentCountry + 1, 0] = ProgressStatus.Active;
+                _progressInfo.Levels[currentCountry + 1, 0, 0] = ProgressStatus.Active;
+            }
+        }
 
         Save();
     }
@@ -216,6 +272,6 @@ public class PlayerStats : MonoBehaviour
 
     public void SetCountryAvailable(int country)
     {
-        _progressInfo.Countires[country] = ProgressStatus.Active;
+        _progressInfo.Countries[country] = ProgressStatus.Active;
     }
 }

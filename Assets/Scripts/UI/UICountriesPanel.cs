@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class UICountriesPanel : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class UICountriesPanel : MonoBehaviour
     [SerializeField] private PlayerStats _playerStats;
     [SerializeField] private TMP_Text _countryName;
     [SerializeField] private TMP_Text[] _townNames;
+    [SerializeField] private Button[] _townButtons;
     [SerializeField] private TMP_Text[] _completeLevelsCount;
     [SerializeField] private UITownPanel _townPanel;
     [SerializeField] private Color _light;
@@ -18,11 +20,14 @@ public class UICountriesPanel : MonoBehaviour
 
     private void OnEnable()
     {
-        SetTowns();
-    }
+        _currentCountryIndex = 0;
 
-    private void Start()
-    {
+        for (int i = 0; i < _game.Countires.Length; i++)
+        {
+            if (_playerStats.GetCountryStatus(i) != ProgressStatus.Inactive)
+                _currentCountryIndex = i;
+        }
+
         SetCountryAndTowns(_currentCountryIndex);
     }
 
@@ -66,6 +71,11 @@ public class UICountriesPanel : MonoBehaviour
 
         foreach (var text in _completeLevelsCount)
             text.color = targetColor;
+
+        foreach (var text in _townNames)
+        {
+            text.color = targetColor;
+        }
     }
 
     private void SetCountryAndTowns(int index)
@@ -102,7 +112,12 @@ public class UICountriesPanel : MonoBehaviour
     {
         for (int i = 0; i < _completeLevelsCount.Length; i++)
         {
-            _completeLevelsCount[i].text = _playerStats.GetAvailableLevelsCount(_currentCountryIndex, i).ToString() + TotalLevels;
+            _completeLevelsCount[i].text = _playerStats.GetDoneLevelsCount(_currentCountryIndex, i).ToString() + TotalLevels;
+        }
+
+        for (int i = 0; i < _townButtons.Length; i++)
+        {
+            _townButtons[i].interactable = _playerStats.GetTownStatus(_currentCountryIndex, i) != ProgressStatus.Inactive;
         }
     }
 }

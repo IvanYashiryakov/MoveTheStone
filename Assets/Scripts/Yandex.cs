@@ -32,12 +32,6 @@ public class Yandex : MonoBehaviour
         }
     }
 
-    public void OnYSDKInit()
-    {
-        CurrentLanguage = GetLang();
-        PlayerStats.Instance.Load();
-    }
-
     public void ShowInterstitial()
     {
 #if UNITY_EDITOR == false
