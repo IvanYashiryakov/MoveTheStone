@@ -28,7 +28,7 @@ public class PlayerStats : MonoBehaviour
     {
         ResetAll();
 #if UNITY_EDITOR == false
-        LoadExtern();
+        //LoadExtern();
 #endif
     }
 

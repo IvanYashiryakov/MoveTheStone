@@ -31,7 +31,7 @@ public class Board : MonoBehaviour
 
     public bool IsLevelDone()
     {
-        if (_previousMoves.Count - 1 != _level.MoveCount)
+        if (_previousMoves.Count - 1 > _level.MoveCount)
             return false;
 
         for (int w = 0; w < Width; w++)
@@ -46,6 +46,25 @@ public class Board : MonoBehaviour
         }
 
         return true;
+    }
+
+    public bool IsLevelFailed()
+    {
+        if (_previousMoves.Count - 1 >= _level.MoveCount)
+        {
+            for (int w = 0; w < Width; w++)
+            {
+                for (int h = 0; h < Height; h++)
+                {
+                    if (_tiles[w, h].Item != null)
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
     }
 
     public void GenerateLevel(Level level)

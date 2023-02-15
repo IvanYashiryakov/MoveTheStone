@@ -18,6 +18,8 @@ public class Game : MonoBehaviour
     public Country[] Countires => _countries;
 
     [HideInInspector] public UnityAction LevelDone;
+    [HideInInspector] public UnityAction LevelFailed;
+    [HideInInspector] public UnityAction<bool> PreviousMoveLoaded;
 
     private void OnEnable()
     {
@@ -67,11 +69,17 @@ public class Game : MonoBehaviour
     public void ButtonLoadPreviousMove()
     {
         _board.LoadPreviousMove();
+        PreviousMoveLoaded?.Invoke(_board.IsLevelFailed());
+    }
+
+    public void RestartLevel()
+    {
+        _board.RestartLevel();
     }
 
     public void ButtonHint()
     {
-        _board.RestartLevel();
+        RestartLevel();
         _board.StartNextHint();
     }
 
@@ -111,7 +119,11 @@ public class Game : MonoBehaviour
             _board.SaveMove();
             _board.TryStartNextHint();
 
-            if (_board.IsLevelDone() == true)
+            if (_board.IsLevelFailed() == true)
+            {
+                LevelFailed?.Invoke();
+            }
+            else if (_board.IsLevelDone() == true)
             {
                 _playerStats.SetNextLevelAvailable(_currentCountry, _currentTown, _currentLevel);
                 LevelDone?.Invoke();
