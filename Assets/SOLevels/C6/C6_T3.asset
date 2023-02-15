@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90307dc364ec9ac4493c1a7c94373308, type: 3}
   m_Name: C6_T3
   m_EditorClassIdentifier: 
-  EnName: Chapter 3
-  RuName: "\u0413\u043B\u0430\u0432\u0430 3"
-  TrName: "B\xF6l\xFCm 3"
+  EnName: Chapter 23
+  RuName: "\u0413\u043B\u0430\u0432\u0430 23"
+  TrName: "B\xF6l\xFCm 23"
   Levels:
   - {fileID: 11400000, guid: a2fc70746baabcb4d89f9f48f654d51f, type: 2}
   - {fileID: 11400000, guid: a87bffa129822d64e91ce7e1c5ede04c, type: 2}

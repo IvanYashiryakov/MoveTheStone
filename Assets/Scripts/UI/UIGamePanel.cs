@@ -55,7 +55,6 @@ public class UIGamePanel : MonoBehaviour
     {
         _doneClickCount++;
         _doneButton.SetActive(false);
-
         if (_game.TryLoadNextLevelInTown() == false)
         {
             Yandex.Instance.ShowInterstitial();

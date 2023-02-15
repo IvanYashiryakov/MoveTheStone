@@ -160,7 +160,7 @@ public class PlayerStats : MonoBehaviour
             }
         }
 
-        return activeLevels <= 1;
+        return activeLevels > 1;
     }
 
     public int GetDoneLevelsCount(int country, int town)
