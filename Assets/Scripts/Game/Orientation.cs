@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ChooseOrientation : MonoBehaviour
+public class Orientation : MonoBehaviour
 {
     [SerializeField] private RectTransform _portraitUI;
     [SerializeField] private RectTransform _landscapeUI;
