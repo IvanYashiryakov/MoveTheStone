@@ -211,7 +211,6 @@ public class PlayerStats : MonoBehaviour
         }
 
         SetFirstLevelActive();
-        SetAllLevelActive();
     }
 
     private void SetAllLevelActive()

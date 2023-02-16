@@ -8055,7 +8055,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _game: {fileID: 1959385642}
-  CurrentLanguage: ru
+  CurrentLanguage: -na-
 --- !u!4 &1715465881
 Transform:
   m_ObjectHideFlags: 0
