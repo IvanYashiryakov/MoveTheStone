@@ -22,15 +22,23 @@ public class Orientation : MonoBehaviour
         {
             Camera.main.transform.position = _cameraLandscapePostion;
             Camera.main.orthographicSize = _cameraLandscapeSize;
-            _portraitUI.gameObject.SetActive(false);
-            _landscapeUI.gameObject.SetActive(true);
+
+            if (_portraitUI != null)
+            {
+                _portraitUI.gameObject.SetActive(false);
+                _landscapeUI.gameObject.SetActive(true);
+            }
         }
         else
         {
             Camera.main.transform.position = _cameraPortraitPostion;
             Camera.main.orthographicSize = _cameraPortraitSize;
-            _landscapeUI.gameObject.SetActive(false);
-            _portraitUI.gameObject.SetActive(true);
+
+            if (_portraitUI != null)
+            {
+                _landscapeUI.gameObject.SetActive(false);
+                _portraitUI.gameObject.SetActive(true);
+            }
         }
     }
 }

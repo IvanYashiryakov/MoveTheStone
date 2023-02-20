@@ -1,5 +1,5 @@
-using System.Runtime.InteropServices;
 using UnityEngine;
+using Agava.YandexGames;
 
 public class Yandex : MonoBehaviour
 {
@@ -7,22 +7,21 @@ public class Yandex : MonoBehaviour
 
     public static Yandex Instance;
     public string CurrentLanguage;
-
+    /*
     [DllImport("__Internal")]
     private static extern void ShowRewAdv();
     [DllImport("__Internal")]
     private static extern void ShowAdv();
     [DllImport("__Internal")]
     private static extern string GetLang();
+    */
 
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-#if UNITY_EDITOR == false
-            CurrentLanguage = GetLang();
-#endif
+            CurrentLanguage = YandexGamesSdk.Environment.i18n.lang;
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -33,16 +32,18 @@ public class Yandex : MonoBehaviour
 
     public void ShowInterstitial()
     {
-#if UNITY_EDITOR == false
-        ShowAdv();
+#if !UNITY_WEBGL || UNITY_EDITOR
+        return;
 #endif
+        InterstitialAd.Show();
     }
 
     public void ShowRewardForHint()
     {
-#if UNITY_EDITOR == false
-        ShowRewAdv();
+#if !UNITY_WEBGL || UNITY_EDITOR
+        return;
 #endif
+        VideoAd.Show(null, OnRewardedHint);
     }
 
     public void OnRewardedHint()
