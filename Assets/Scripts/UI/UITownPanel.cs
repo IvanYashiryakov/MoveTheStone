@@ -59,5 +59,6 @@ public class UITownPanel : MonoBehaviour
         _game.GenerateLevel(_countryIndex, _townIndex, levelNumber);
         _gamePanel.SetActive(true);
         gameObject.SetActive(false);
+        Yandex.Instance.ShowInterstitial();
     }
 }

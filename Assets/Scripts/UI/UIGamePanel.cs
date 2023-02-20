@@ -9,8 +9,6 @@ public class UIGamePanel : MonoBehaviour
     [SerializeField] private GameObject _doneButton;
     [SerializeField] private GameObject _restartButton;
 
-    private int _doneClickCount = 0;
-
     private void OnEnable()
     {
         _game.LevelDone += OnLevelDone;
@@ -53,21 +51,12 @@ public class UIGamePanel : MonoBehaviour
 
     public void ButtonDoneClick()
     {
-        _doneClickCount++;
+        Yandex.Instance.ShowInterstitial();
         _doneButton.SetActive(false);
+
         if (_game.TryLoadNextLevelInTown() == false)
         {
-            Yandex.Instance.ShowInterstitial();
-            _doneClickCount = 0;
             ExitLevel();
-
-            return;
-        }
-
-        if(_doneClickCount >= 3)
-        {
-            Yandex.Instance.ShowInterstitial();
-            _doneClickCount = 0;
         }
     }
 

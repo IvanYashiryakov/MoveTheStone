@@ -107,7 +107,7 @@ public class Game : MonoBehaviour
             }
             else if (_board.IsLevelDone() == true)
             {
-                _playerStats.SetNextLevelAvailable(_currentCountry, _currentTown, _currentLevel);
+                _playerStats.SetNextLevelAvailableAndSave(_currentCountry, _currentTown, _currentLevel);
                 LevelDone?.Invoke();
             }
         }
