@@ -21,7 +21,9 @@ public class Yandex : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+#if UNITY_EDITOR == false
             CurrentLanguage = YandexGamesSdk.Environment.i18n.lang;
+#endif
             DontDestroyOnLoad(gameObject);
         }
         else
