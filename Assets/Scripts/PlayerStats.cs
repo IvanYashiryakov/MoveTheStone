@@ -347,8 +347,10 @@ public class PlayerStats : MonoBehaviour
         return _progressInfo.Countries[country];
     }
 
-    public void SetNextLevelAvailable(int currentCountry, int currentTown, int currentLevel)
+    public void SetNextLevelAvailable(int currentCountry, int currentTown, int currentLevel, out bool isDoneFirstTime)
     {
+        isDoneFirstTime = _progressInfo.Levels[currentCountry, currentTown, currentLevel] != ProgressStatus.Done;
+
         _progressInfo.Levels[currentCountry, currentTown, currentLevel] = ProgressStatus.Done;
         PlayerPrefs.SetInt(currentCountry.ToString() + currentTown.ToString() + currentLevel.ToString(), (int)_progressInfo.Levels[currentCountry, currentTown, currentLevel]);
 

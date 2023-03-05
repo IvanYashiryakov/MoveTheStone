@@ -8,6 +8,7 @@ public class UIGamePanel : MonoBehaviour
     [SerializeField] private UITownPanel _townPanel;
     [SerializeField] private GameObject _doneButton;
     [SerializeField] private GameObject _restartButton;
+    [SerializeField] private ParticleSystem _doneEffect;
 
     private void OnEnable()
     {
@@ -28,8 +29,14 @@ public class UIGamePanel : MonoBehaviour
         _restartButton.SetActive(true);
     }
 
-    public void OnLevelDone()
+    public void OnLevelDone(bool isDoneFirstTime)
     {
+        if (isDoneFirstTime)
+        {
+            _doneEffect.Play();
+            _doneEffect.GetComponent<AudioSource>().Play();
+        }
+
         _doneButton.SetActive(true);
     }
 

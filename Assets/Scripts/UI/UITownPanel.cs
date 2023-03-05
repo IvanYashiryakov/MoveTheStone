@@ -9,6 +9,7 @@ public class UITownPanel : MonoBehaviour
     [SerializeField] private UILevelButtonView _template;
     [SerializeField] private Transform _container;
     [SerializeField] private GameObject _gamePanel;
+    [SerializeField] private AudioSource _buttonClickSound;
 
     private List<UILevelButtonView> _levelButtons;
     private int _countryIndex;
@@ -59,6 +60,7 @@ public class UITownPanel : MonoBehaviour
         _game.GenerateLevel(_countryIndex, _townIndex, levelNumber);
         _gamePanel.SetActive(true);
         gameObject.SetActive(false);
+        _buttonClickSound.Play();
         Yandex.Instance.ShowInterstitial();
     }
 }

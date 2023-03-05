@@ -4,6 +4,7 @@ public class Orientation : MonoBehaviour
 {
     [SerializeField] private RectTransform _portraitUI;
     [SerializeField] private RectTransform _landscapeUI;
+    [SerializeField] private ParticleSystem _doneEffect;
 
     private readonly Vector3 _cameraPortraitPostion = new Vector3(3f, 5.1f, -10);
     private readonly float _cameraPortraitSize = 6.24f;
@@ -27,6 +28,7 @@ public class Orientation : MonoBehaviour
             {
                 _portraitUI.gameObject.SetActive(false);
                 _landscapeUI.gameObject.SetActive(true);
+                _doneEffect.transform.position = new Vector2(3f, 4f);
             }
         }
         else
@@ -38,6 +40,7 @@ public class Orientation : MonoBehaviour
             {
                 _landscapeUI.gameObject.SetActive(false);
                 _portraitUI.gameObject.SetActive(true);
+                _doneEffect.transform.position = new Vector2(3f, 5.1f);
             }
         }
     }

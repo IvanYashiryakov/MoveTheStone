@@ -19,8 +19,12 @@ public class InitScene : MonoBehaviour
 
     private IEnumerator Start()
     {
+#if UNITY_EDITOR == false
         yield return YandexGamesSdk.Initialize();
+#endif
+
         _sdkInitialized = true;
+        yield return null;
     }
 
     private IEnumerator FadeIn()

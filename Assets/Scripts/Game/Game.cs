@@ -17,7 +17,7 @@ public class Game : MonoBehaviour
 
     public Country[] Countires => _countries;
 
-    [HideInInspector] public UnityAction LevelDone;
+    [HideInInspector] public UnityAction<bool> LevelDone;
     [HideInInspector] public UnityAction LevelFailed;
     [HideInInspector] public UnityAction<bool> PreviousMoveLoaded;
 
@@ -107,8 +107,8 @@ public class Game : MonoBehaviour
             }
             else if (_board.IsLevelDone() == true)
             {
-                _playerStats.SetNextLevelAvailable(_currentCountry, _currentTown, _currentLevel);
-                LevelDone?.Invoke();
+                _playerStats.SetNextLevelAvailable(_currentCountry, _currentTown, _currentLevel, out bool isDoneFirstTime);
+                LevelDone?.Invoke(isDoneFirstTime);
             }
         }
     }

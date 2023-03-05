@@ -7,14 +7,6 @@ public class Yandex : MonoBehaviour
 
     public static Yandex Instance;
     public string CurrentLanguage;
-    /*
-    [DllImport("__Internal")]
-    private static extern void ShowRewAdv();
-    [DllImport("__Internal")]
-    private static extern void ShowAdv();
-    [DllImport("__Internal")]
-    private static extern string GetLang();
-    */
 
     private void Awake()
     {

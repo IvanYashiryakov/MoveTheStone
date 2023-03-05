@@ -10,6 +10,13 @@ public class Board : MonoBehaviour
     [SerializeField] private GameObject _tilePrafab;
     [SerializeField] private GameObject[] _itemPrefabs;
     [SerializeField] private GameObject _hintPrefab;
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip _itemDropSound;
+    [Range(0f, 1f)] [SerializeField] private float _itemDropSoundVolume;
+    [SerializeField] private AudioClip _itemDisapearSound;
+    [Range(0f, 1f)] [SerializeField] private float _itemDisapearSoundVolume;
+    [SerializeField] private AudioClip _itemSwapSound;
+    [Range(0f, 1f)] [SerializeField] private float _itemSwapSoundVolume;
 
     private Tile[,] _tiles;
     private Level _level;
@@ -144,6 +151,14 @@ public class Board : MonoBehaviour
         }
 
         _itemsToDestroy = tilesToDeleteItem.Count;
+
+        if (_itemsToDestroy > 0)
+        {
+            _audioSource.Stop();
+            _audioSource.PlayOneShot(_itemDropSound, _itemDropSoundVolume);
+            _audioSource.PlayOneShot(_itemDisapearSound, _itemDisapearSoundVolume);
+        }
+
         CheckAllMatchedItemsDestroyed(false);
     }
 
@@ -362,6 +377,10 @@ public class Board : MonoBehaviour
     private void OnItemDropped(Item item)
     {
         _itemsToDrop--;
+
+        if (_itemsToDrop == 0)
+            _audioSource.PlayOneShot(_itemDropSound, _itemDropSoundVolume);
+
         CheckAllItemsDropped(true);
     }
 
@@ -400,6 +419,7 @@ public class Board : MonoBehaviour
                 swapItem.transform.position = swapItem.transform.parent.position;
             }
 
+            _audioSource.PlayOneShot(_itemSwapSound, _itemSwapSoundVolume);
             item.transform.position = item.transform.parent.position;
         }
 
