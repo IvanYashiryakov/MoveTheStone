@@ -29,7 +29,7 @@ public class Yandex : MonoBehaviour
 #if !UNITY_WEBGL || UNITY_EDITOR
         return;
 #endif
-        InterstitialAd.Show();
+        InterstitialAd.Show(OnOpenCallback, OnCloseCallback);
     }
 
     public void ShowRewardForHint()
@@ -37,11 +37,27 @@ public class Yandex : MonoBehaviour
 #if !UNITY_WEBGL || UNITY_EDITOR
         return;
 #endif
-        VideoAd.Show(null, OnRewardedHint);
+        VideoAd.Show(OnOpenCallback, OnRewardedHint, OnCloseCallback);
     }
 
     public void OnRewardedHint()
     {
         _game.ButtonHint();
+        OnCloseCallback();
+    }
+
+    private void OnOpenCallback()
+    {
+        AudioListener.volume = 0f;
+    }
+
+    private void OnCloseCallback(bool b)
+    {
+        OnCloseCallback();
+    }
+
+    private void OnCloseCallback()
+    {
+        AudioListener.volume = 1f;
     }
 }
